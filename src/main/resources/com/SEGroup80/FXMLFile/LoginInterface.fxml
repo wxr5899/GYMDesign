@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.LoginController">
+   <children>
+      <TextField fx:id="userID" layoutX="308.0" layoutY="119.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" style="-fx-border-color: white; -fx-background-color: white;" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="119.0" />
+      <Button fx:id="loginButton" layoutX="428.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#handleLogin" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: black;" text="Login" textFill="WHITE" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="428.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="254.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font></Button>
+      <Label fx:id="forget" layoutX="393.0" layoutY="222.0" prefHeight="14.0" prefWidth="116.0" text="Forget The Password？" AnchorPane.rightAnchor="91.0" AnchorPane.topAnchor="222.0">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font></Label>
+      <PasswordField fx:id="password" layoutX="308.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="201.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="174.0" />
+      <Line endX="100.0" layoutX="407.0" layoutY="144.0" startX="-99.33328247070312" startY="-2.288818359375E-5" />
+      <Button fx:id="enrollButton" layoutX="308.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#handleEroll" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: black;" text="Sign Up" textFill="WHITE" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="254.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font></Button>
+      <Rectangle arcHeight="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="200.0" AnchorPane.rightAnchor="400.0">
+         <effect>
+            <DropShadow />
+         </effect></Rectangle>
+      <Label prefHeight="114.0" prefWidth="129.0" text="H" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Times New Roman" size="108.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutY="140.0" text="E R" textFill="WHITE" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font name="Times New Roman" size="108.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutY="280.0" prefHeight="135.0" prefWidth="177.0" text="C U" textFill="WHITE" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font name="Times New Roman" size="108.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label layoutX="220.0" layoutY="288.0" text="L E">
+         <font>
+            <Font name="Times New Roman" size="108.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="407.0" layoutY="200.0" startX="-99.33328247070312" startY="-2.288818359375E-5" />
+      <ImageView fx:id="closeTag" fitHeight="25.0" fitWidth="25.0" layoutX="556.0" layoutY="14.0" onMouseClicked="#closeLoginInterface" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Icon/closeIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="383.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Icon/loginIcon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="warnLabel" layoutX="307.0" layoutY="94.0" prefHeight="25.0" prefWidth="201.0" textFill="RED" />
+   </children>
+</AnchorPane>

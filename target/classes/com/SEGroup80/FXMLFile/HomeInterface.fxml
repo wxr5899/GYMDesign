@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.HomeController">
+   <children>
+      <AnchorPane fx:id="rootLayout" prefHeight="200.0" prefWidth="320.0">
+         <children>
+            <HBox prefHeight="720.0" prefWidth="320.0">
+               <children>
+                  <AnchorPane prefHeight="720.0" prefWidth="90.0" style="-fx-background-color: white;">
+                     <children>
+                        <VBox layoutX="25.0" prefHeight="720.0" prefWidth="40.0" style="-fx-background-color: white;">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Pane prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <ImageView fx:id="closeIcon" fitHeight="36.0" fitWidth="36.0" layoutX="2.0" layoutY="2.0" onMouseClicked="#closeHomeInterface" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/Icon/closeIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Rectangle fill="WHITE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/indexIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle fill="WHITE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/coachIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/loginIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/courseIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="720.0" prefWidth="230.0">
+                     <children>
+                        <VBox prefHeight="720.0" prefWidth="230.0" style="-fx-background-color: black;">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="260.0" />
+                              <Label fx:id="homePaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToHomePane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: #1d1626;" text="Home" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="coachPaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToCoachPane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: black;" text="Coaches" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="accountPaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToAccountPane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: black;" text="Account" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="coursePaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToCoursePane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: black;" text="Course" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="720.0" prefWidth="760.0">
+         <children>
+            <Pane fx:id="coursePane" prefHeight="720.0" prefWidth="760.0">
+               <children>
+                  <ScrollPane fx:id="courseScrollPane" hbarPolicy="NEVER" prefHeight="720.0" prefWidth="760.0" vbarPolicy="ALWAYS">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                    </content>
+                  </ScrollPane>
+               </children></Pane>
+            <Pane fx:id="accountPane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: green;" />
+            <Pane fx:id="homePane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
+               <children>
+                  <VBox fx:id="homeVBox" prefHeight="720.0" prefWidth="750.0">
+                     <children>
+                        <AnchorPane fx:id="homeADPane" prefHeight="300.0" prefWidth="760.0" style="-fx-background-color: black;">
+                           <children>
+                              <ImageView fx:id="homeADImage" fitHeight="270.0" fitWidth="750.0" layoutY="10.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../Image/cover1.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="popularVideosLabel" prefHeight="30.0" prefWidth="137.0" text="Popular Videos">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Times New Roman Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox fx:id="popularVideosHBox" prefHeight="400.0" prefWidth="760.0">
+                           <children>
+                              <VBox fx:id="videoVBoxLeft" prefHeight="400.0" prefWidth="380.0" />
+                              <VBox fx:id="videoVBoxRight" prefHeight="400.0" prefWidth="380.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ScrollBar fx:id="homeScrollBar" layoutX="750.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="10.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="coachPane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
+               <children>
+                  <VBox fx:id="coachVBox" prefHeight="720.0" prefWidth="750.0">
+                     <children>
+                        <Label fx:id="popularVideosLabel1" prefHeight="50.0" prefWidth="271.0" text="Search Your Favorite Coach:">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Times New Roman Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: black;">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/searchIcon.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <TextField fx:id="courseSearchBar" prefHeight="30.0" prefWidth="200.0" promptText="Coach ID" style="-fx-background-color: transparent;">
+                                       <font>
+                                          <Font name="Times New Roman" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Line endX="100.0" startX="-100.0" stroke="WHITE">
+                                       <VBox.margin>
+                                          <Insets top="1.0" />
+                                       </VBox.margin>
+                                    </Line>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ScrollBar fx:id="coachScrollBar" layoutX="750.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="10.0" unitIncrement="10.0" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

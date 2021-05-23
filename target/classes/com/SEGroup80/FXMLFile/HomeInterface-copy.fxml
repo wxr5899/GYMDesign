@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.HomeController">
+   <children>
+      <AnchorPane fx:id="rootLayout" prefHeight="200.0" prefWidth="320.0">
+         <children>
+            <HBox prefHeight="720.0" prefWidth="320.0">
+               <children>
+                  <AnchorPane prefHeight="720.0" prefWidth="90.0" style="-fx-background-color: white;">
+                     <children>
+                        <VBox layoutX="25.0" prefHeight="720.0" prefWidth="40.0" style="-fx-background-color: white;">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Pane prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <ImageView fx:id="closeIcon" fitHeight="36.0" fitWidth="36.0" layoutX="2.0" layoutY="2.0" onMouseClicked="#closeHomeInterface" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/Icon/closeIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Rectangle fill="WHITE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/indexIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle fill="WHITE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/coachIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/loginIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/Icon/courseIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="720.0" prefWidth="230.0">
+                     <children>
+                        <VBox prefHeight="720.0" prefWidth="230.0" style="-fx-background-color: black;">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="260.0" />
+                              <Label fx:id="homePaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToHomePane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: #1d1626;" text="Home" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="coachPaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToCoachPane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: black;" text="Coaches" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="accountPaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToAccountPane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: black;" text="Account" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="coursePaneLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#switchToCoursePane" prefHeight="80.0" prefWidth="260.0" style="-fx-background-color: black;" text="Course" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="720.0" prefWidth="760.0">
+         <children>
+            <Pane fx:id="coursePane" prefHeight="720.0" prefWidth="760.0">
+               <children>
+                  <ScrollPane fx:id="courseScrollPane" hbarPolicy="NEVER" prefHeight="720.0" prefWidth="760.0" vbarPolicy="ALWAYS">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                    </content>
+                  </ScrollPane>
+               </children></Pane>
+            <Pane fx:id="accountPane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: green;" />
+            <Pane fx:id="coachPane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: skyblue;">
+               <children>
+                  <AnchorPane prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: skyblue;" />
+               </children>
+            </Pane>
+            <Pane fx:id="homePane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
+               <children>
+                  <ScrollPane fx:id="homeScrollPane" hbarPolicy="NEVER" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
+                     <content>
+                        <VBox fx:id="homeVBox" prefHeight="2000.0" prefWidth="760.0">
+                           <children>
+                              <AnchorPane fx:id="homeADPane" prefHeight="300.0" prefWidth="760.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <ImageView fx:id="homeADImage" fitHeight="280.0" fitWidth="740.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../Image/cover1.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <Label fx:id="popularVideosLabel" prefHeight="30.0" prefWidth="137.0" text="Popular Videos">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox fx:id="popularVideosHBox" prefHeight="400.0" prefWidth="760.0">
+                                 <children>
+                                    <VBox fx:id="videoVBoxLeft" prefHeight="400.0" prefWidth="380.0">
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="230.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../Image/CourseImage/cover1.jpg" />
+                                                   </image>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="65.0" prefHeight="40.0" prefWidth="80.0" text="YOGA 01">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="105.0" prefHeight="40.0" prefWidth="80.0" text="Steven">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.8;">
+                                                   <image>
+                                                      <Image url="@../Image/Icon/playIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="14.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="999">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/likeIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="164.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="500">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/collectIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="230.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../Image/CourseImage/cover1.jpg" />
+                                                   </image>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="65.0" prefHeight="40.0" prefWidth="80.0" text="YOGA 01">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="105.0" prefHeight="40.0" prefWidth="80.0" text="Steven">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.8;">
+                                                   <image>
+                                                      <Image url="@../Image/Icon/playIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="14.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="999">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/likeIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="164.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="500">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/collectIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="videoVBoxRight" prefHeight="400.0" prefWidth="380.0">
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="230.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../Image/CourseImage/cover1.jpg" />
+                                                   </image>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="65.0" prefHeight="40.0" prefWidth="80.0" text="YOGA 01">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="105.0" prefHeight="40.0" prefWidth="80.0" text="Steven">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.8;">
+                                                   <image>
+                                                      <Image url="@../Image/Icon/playIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="14.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="999">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/likeIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="164.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="500">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/collectIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="230.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../Image/CourseImage/cover1.jpg" />
+                                                   </image>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="65.0" prefHeight="40.0" prefWidth="80.0" text="YOGA 01">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="105.0" prefHeight="40.0" prefWidth="80.0" text="Steven">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="94.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.8;">
+                                                   <image>
+                                                      <Image url="@../Image/Icon/playIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="14.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="999">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/likeIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="164.0" layoutY="149.0" prefHeight="25.0" prefWidth="80.0" text="500">
+                                                   <font>
+                                                      <Font name="Times New Roman" size="14.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/Icon/collectIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
