@@ -24,9 +24,11 @@ D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Pojo\Course
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Pojo\UserPojo\Manager.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Controller\VideoPlayController.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Controller\BookController.java
+D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Controller\CoachInfoController.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Pojo\BasicPojo\Body.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Pojo\BasicPojo\Order.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Tool\GetDateTool.java
+D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\Tool\PageTransTool.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\App.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\IO\CourseJSONFileProcessor.java
 D:\ProjectWare\version1\GYMDesign-master\src\main\java\com\SEGroup80\IO\UserJSONFileProcessor.java

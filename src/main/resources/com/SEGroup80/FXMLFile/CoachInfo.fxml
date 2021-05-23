@@ -11,11 +11,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.CoachInfoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="145.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#adb3b9" height="145.0" layoutX="136.0" opacity="0.45" stroke="BLACK" strokeType="INSIDE" width="465.0" />
-      <Label fx:id="NameLabel" layoutX="149.0" layoutY="12.0" prefHeight="34.0" prefWidth="146.0" text="Billy Wang" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="NameLabel" layoutX="149.0" layoutY="12.0" prefHeight="34.0" prefWidth="200.0" text="Billy Wang" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="30.0" />
          </font>
@@ -24,7 +24,7 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Label fx:id="sex" layoutX="222.0" layoutY="79.0" prefHeight="20.0" prefWidth="58.0" text="Male" textFill="WHITE">
+      <Label fx:id="SexLabel" layoutX="222.0" layoutY="79.0" prefHeight="20.0" prefWidth="58.0" text="Male" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
@@ -32,11 +32,11 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Label layoutX="310.0" layoutY="79.0" prefHeight="20.0" prefWidth="115.0" text="187-3465-2637" textFill="WHITE">
+      <Label fx:id="PhoneLabel" layoutX="310.0" layoutY="79.0" prefHeight="20.0" prefWidth="115.0" text="187-3465-2637" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Label layoutX="309.0" layoutY="51.0" text="billy@qq.com" textFill="WHITE">
+      <Label fx:id="EmailLabel" layoutX="309.0" layoutY="51.0" text="billy@qq.com" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
@@ -59,7 +59,7 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="132.0" fitWidth="121.0" layoutX="9.0" layoutY="5.0" pickOnBounds="true">
+      <ImageView fx:id="CoachPhoto" fitHeight="132.0" fitWidth="121.0" layoutX="9.0" layoutY="5.0" pickOnBounds="true">
          <image>
             <Image url="@../Image/CoachImage/Coach1.png" />
          </image>
@@ -144,7 +144,7 @@
          </children>
       </Pane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#adb3b9" height="209.0" layoutX="11.0" layoutY="179.0" opacity="0.45" stroke="BLACK" strokeType="INSIDE" width="115.0" />
-      <Text layoutX="15.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm so Strong, I like playing sports. " wrappingWidth="103.20000000000005" />
+      <Text fx:id="Description" layoutX="15.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm so Strong, I like playing sports. " wrappingWidth="103.20000000000005" />
       <Label layoutX="14.0" layoutY="156.0" text="Description:">
          <font>
             <Font name="Times New Roman" size="18.0" />
