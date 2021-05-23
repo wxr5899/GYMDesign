@@ -6,6 +6,7 @@ import com.SEGroup80.Pojo.BasicPojo.Video;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Pojo.UserPojo.User;
 import com.SEGroup80.Service.SearchService;
+import com.SEGroup80.Tool.PageTransTool;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -24,6 +25,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -343,8 +346,6 @@ public class HomeController implements Initializable {
             rightAnchorPane.setPrefWidth(380);
             rightAnchorPane.setPrefHeight(200);
 
-
-
             String coachImageUrl = "com/SEGroup80/Image/CoachImage/Coach1.png";
             Image coverImage =  new Image(coachImageUrl);
             ImageView coverImageView = new ImageView(coverImage);
@@ -356,7 +357,6 @@ public class HomeController implements Initializable {
             coverImageView.setEffect(new DropShadow());
             coverImageView.setEffect(new DropShadow());
             leftAnchorPane.getChildren().add(coverImageView);
-
 
             Label coachName = new Label(coach.getName());
             coachName.setPrefHeight(20);
@@ -392,13 +392,28 @@ public class HomeController implements Initializable {
 
             leftAnchorPane.getChildren().add(coachSex);
 
-            Button detailButton = new Button("Book!");
-            detailButton.setPrefHeight(20);
-            detailButton.setPrefWidth(50);
-            detailButton.setLayoutX(180);
-            detailButton.setLayoutY(75);
+            Button detailButton = new Button();
+            detailButton.setStyle("-fx-background-color:transparent");
+            detailButton.setPrefHeight(180);
+            detailButton.setPrefWidth(100);
+            detailButton.setLayoutX(40);
+            detailButton.setLayoutY(20);
 
-            rightAnchorPane.getChildren().add(detailButton);
+
+            detailButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    TemBean.setCoach(coach);
+                    try {
+                        root = App.loadFXML("CoachInfo");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    new PageTransTool().TransToAnotherPage(rootLayout, root);
+                }
+            });
+
+            leftAnchorPane.getChildren().add(detailButton);
 
 
 
