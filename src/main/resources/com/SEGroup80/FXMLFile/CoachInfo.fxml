@@ -28,7 +28,7 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Label layoutX="140.0" layoutY="156.0" prefHeight="20.0" prefWidth="163.0" text="Live Course:">
+      <Label layoutX="140.0" layoutY="156.0" prefHeight="20.0" prefWidth="163.0" text="Live Course on:">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
@@ -40,7 +40,7 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Button fx:id="BackHome" layoutX="486.0" layoutY="51.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="100.0" style="-fx-background-color: grey;" text="Back" textFill="WHITE" AnchorPane.leftAnchor="486.0" AnchorPane.topAnchor="51.0">
+      <Button fx:id="BackHome" layoutX="522.0" layoutY="51.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="64.0" style="-fx-background-color: grey;" textFill="WHITE" AnchorPane.leftAnchor="522.0" AnchorPane.topAnchor="51.0">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
@@ -75,7 +75,7 @@
                <children>
                   <Pane prefHeight="100.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
-                        <Label layoutX="21.0" layoutY="77.0" text="course name" />
+                        <Label fx:id="course1Name" layoutX="21.0" layoutY="77.0" text="course name" />
                         <ImageView fitHeight="79.0" fitWidth="103.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/pic.PNG" />
@@ -86,25 +86,25 @@
                   <Pane prefHeight="112.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label layoutX="21.0" layoutY="78.0" text="course name" />
+                        <Label fx:id="course2Name" layoutX="21.0" layoutY="78.0" text="course name" />
                      </children>
                   </Pane>
                   <Pane prefHeight="106.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label layoutX="21.0" layoutY="78.0" text="course name" />
+                        <Label fx:id="course3Name" layoutX="21.0" layoutY="78.0" text="course name" />
                      </children>
                   </Pane>
                </children>
             </HBox>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="9.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="leftSwitchRec" fitHeight="40.0" fitWidth="25.0" layoutX="14.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/white-left.png" />
+                  <Image url="@../Image/Icon/leftArrowsIcon.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="409.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightSwitchRec" fitHeight="40.0" fitWidth="25.0" layoutX="419.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/white-right.png" />
+                  <Image url="@../Image/Icon/rightArrowsIcon.png" />
                </image>
             </ImageView>
          </children>
@@ -116,29 +116,32 @@
                <children>
                   <Pane prefHeight="100.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-background-color: white;">
                      <children>
-                        <Label layoutX="21.0" layoutY="9.0" text="course name" />
+                        <Label fx:id="book1" alignment="CENTER" layoutX="20.0" layoutY="10.0" prefWidth="80.0" text="time1">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font></Label>
                      </children>
                   </Pane>
                   <Pane prefHeight="112.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-background-color: white;">
                      <children>
-                        <Label layoutX="21.0" layoutY="9.0" text="course name" />
+                        <Label fx:id="book2" layoutX="20.0" layoutY="10.0" prefWidth="80.0" text="course name" />
                      </children>
                   </Pane>
                   <Pane prefHeight="106.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-background-color: white;">
                      <children>
-                        <Label layoutX="21.0" layoutY="9.0" text="course name" />
+                        <Label fx:id="book3" layoutX="20.0" layoutY="10.0" prefWidth="80.0" text="course name" />
                      </children>
                   </Pane>
                </children>
             </HBox>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="leftSwitchLiv" fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/white-left.png" />
+                  <Image url="@../Image/Icon/leftArrowsIcon.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="404.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightSwitch1" fitHeight="20.0" fitWidth="20.0" layoutX="429.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/white-right.png" />
+                  <Image url="@../Image/Icon/rightArrowsIcon.png" />
                </image>
             </ImageView>
          </children>
