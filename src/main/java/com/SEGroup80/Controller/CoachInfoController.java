@@ -52,14 +52,19 @@ public class CoachInfoController implements Initializable {
 
     private final int CourseNum = 3;
 
+    private int courseIndex = 0;
+
+    private int bookIndex = 0;
+
+    private ArrayList<Course> courseArrayList = null;
+
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        int courseIndex = 0;
-        int bookIndex = 0;
+
 
         Coach coach = TemBean.getCoach();
 
@@ -78,7 +83,7 @@ public class CoachInfoController implements Initializable {
         CoachPhoto.setImage(image);
 
         ArrayList<String> courseIDArrayList = coach.getCourseList();
-        ArrayList<Course> courseArrayList = new ArrayList<>();
+        ;
         SearchService searchService = new SearchService();
         try {
             courseArrayList = searchService.GetAllCourse();
@@ -86,13 +91,35 @@ public class CoachInfoController implements Initializable {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < CourseNum; i++) {
-            course1Name.setText(courseArrayList.get(courseIndex * CourseNum).getCourseName());
-            course1Name.setText(courseArrayList.get(courseIndex * CourseNum + 1).getCourseName());
-            course1Name.setText(courseArrayList.get(courseIndex * CourseNum + 2).getCourseName());
-        }
 
-        rightSwitchRec.setOnMouseClicked();
+        course1Name.setText(courseArrayList.get(0).getCourseName());
+        course2Name.setText(courseArrayList.get(1).getCourseName());
+        course3Name.setText(courseArrayList.get(2).getCourseName());
+
+
+        rightSwitchRec.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if (courseIndex < Math.ceil(((double)courseArrayList.size() / 3.0))){
+                    courseIndex += 1;
+                    course1Name.setText(courseArrayList.get(courseIndex * 3).getCourseName());
+                    course2Name.setText(courseArrayList.get(courseIndex * 3 + 1).getCourseName());
+                    course3Name.setText(courseArrayList.get(courseIndex * 3 + 2).getCourseName());
+                }
+            }
+        });
+
+        leftSwitchRec.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if (courseIndex > 0){
+                    courseIndex -= 1;
+                    course1Name.setText(courseArrayList.get(courseIndex * 3).getCourseName());
+                    course2Name.setText(courseArrayList.get(courseIndex * 3 + 1).getCourseName());
+                    course3Name.setText(courseArrayList.get(courseIndex * 3 + 2).getCourseName());
+                }
+            }
+        });
 
         System.out.println(courseArrayList.size());
 
