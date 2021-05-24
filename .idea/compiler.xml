@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="GYMDesignNonmodular" />
+        <module name="GYMDesign-1.0.2" />
         <module name="GYMDesign-master" />
       </profile>
     </annotationProcessing>
