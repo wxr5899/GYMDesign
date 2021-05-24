@@ -1,5 +1,6 @@
 package com.SEGroup80.Service;
 import com.SEGroup80.Pojo.BasicPojo.Book;
+import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Tool.GetDateTool;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,6 +24,20 @@ public class BookService {
         }
 
         return bookArrayList;
+    }
+
+    public ArrayList<Book> extractFutureBookArrangement(Coach coach) {
+
+        ArrayList<Book> bookArrayList = null;
+
+        bookArrayList = coach.getBookList();
+
+        for(Book book : bookArrayList) {
+
+        }
+
+        return bookArrayList;
+
     }
 
 
