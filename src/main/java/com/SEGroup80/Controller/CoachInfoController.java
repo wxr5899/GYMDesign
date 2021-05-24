@@ -56,7 +56,7 @@ public class CoachInfoController implements Initializable {
 
     private int bookIndex = 0;
 
-    private ArrayList<Course> courseArrayList = null;
+    private ArrayList<Course> courseArrayList = new ArrayList<>();
 
 
 
@@ -85,26 +85,48 @@ public class CoachInfoController implements Initializable {
         ArrayList<String> courseIDArrayList = coach.getCourseList();
         ;
         SearchService searchService = new SearchService();
-        try {
-            courseArrayList = searchService.GetAllCourse();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        for(String ID : courseIDArrayList) {
+            courseArrayList.add(searchService.SearchCourse(ID));
         }
 
+        if (courseArrayList.size() > 0) {
+            course1Name.setText(courseArrayList.get(0).getCourseName());
+        }
 
-        course1Name.setText(courseArrayList.get(0).getCourseName());
-        course2Name.setText(courseArrayList.get(1).getCourseName());
-        course3Name.setText(courseArrayList.get(2).getCourseName());
+        if (courseArrayList.size() > 1) {
+            course2Name.setText(courseArrayList.get(1).getCourseName());
+        }
+
+        if (courseArrayList.size() > 2) {
+            course3Name.setText(courseArrayList.get(2).getCourseName());
+        }
+
 
 
         rightSwitchRec.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if (courseIndex < Math.ceil(((double)courseArrayList.size() / 3.0))){
+                if (courseIndex < Math.ceil(((double)courseArrayList.size() / 3.0)) - 1){
                     courseIndex += 1;
-                    course1Name.setText(courseArrayList.get(courseIndex * 3).getCourseName());
-                    course2Name.setText(courseArrayList.get(courseIndex * 3 + 1).getCourseName());
-                    course3Name.setText(courseArrayList.get(courseIndex * 3 + 2).getCourseName());
+
+                    if (courseIndex * 3 >= courseIDArrayList.size()) {
+                        course1Name.setText("");
+                    } else {
+                        course1Name.setText(courseArrayList.get(courseIndex * 3).getCourseName());
+                    }
+
+                    if (courseIndex * 3 + 1 >= courseIDArrayList.size()) {
+                        course2Name.setText("");
+                    } else {
+                        course2Name.setText(courseArrayList.get(courseIndex * 3 + 1).getCourseName());
+                    }
+
+                    if (courseIndex * 3 + 2 >= courseIDArrayList.size()) {
+                        course3Name.setText("");
+                    } else {
+                        course3Name.setText(courseArrayList.get(courseIndex * 3 + 2).getCourseName());
+                    }
                 }
             }
         });

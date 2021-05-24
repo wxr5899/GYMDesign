@@ -16,7 +16,7 @@ public class EnrollService {
         if (user == null) {
             System.out.println("The user is null!");
         } else {
-            new UserJSONFileProcessor().writeJSON(user);
+            new UserJSONFileProcessor().writeJSON(user, user.getUserID());
         }
     }
 
@@ -34,7 +34,7 @@ public class EnrollService {
         if (video == null) {
             System.out.println("The course is null!");
         } else {
-            new VideoJSONFileProcessor().writeJSON(video);
+            new VideoJSONFileProcessor().writeJSON(video, video.getVideoID());
         }
     }
 

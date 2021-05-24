@@ -51,7 +51,9 @@ public class UserJSONFileProcessor implements JSONFileProcessor {
         }
     }
 
-    public void writeJSON(Object o) {
+    public void writeJSON(Object o, String ID) {
+
+        recoUserType(ID);
 
         String jsonString = JSON.toJSONString(o);
 

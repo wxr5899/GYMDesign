@@ -10,7 +10,7 @@ public interface JSONFileProcessor {
      * to record the data.
      * @param o
      */
-    public void writeJSON(Object o);
+    public void writeJSON(Object o, String ID);
 
     /**
      * This method is to transfer the JSON string into a object

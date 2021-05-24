@@ -293,8 +293,14 @@ public class DataProducer {
             coachPhoneList.add("17"+ (9-i) + "047" + (236 % i) +"478"+ i);
         }
 
+        ArrayList<String> courseList = new ArrayList<>();
+        courseList.add("R1619524817394");
+        courseList.add("R1619524817408");
+
+
+
         for (int i = 0; i < coachNum; i++) {
-            User coach =  new Coach("Coach", "123456", coachNameList.get(i), coachPhoneList.get(i) + mailList.get(i), coachPhoneList.get(i), (25 + 389 % (i + 1)), genderList.get(i), null, null);
+            User coach =  new Coach("Coach", "123456", coachNameList.get(i), coachPhoneList.get(i) + mailList.get(i), coachPhoneList.get(i), (25 + 389 % (i + 1)), genderList.get(i), null, courseList, "Welcome to Herclues！");
             enrollService.userEnroll(coach);
         }
 

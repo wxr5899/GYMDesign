@@ -10,6 +10,7 @@ public class User {
     private int age;
     private boolean sex;
     private long createDate;
+    private String photoURL;
 
     public User() {
     }
@@ -106,6 +107,14 @@ public class User {
         this.createDate = createDate;
     }
 
+    public String getPhotoURL() {
+        return photoURL;
+    }
+
+    public void setPhotoURL(String photoURL) {
+        this.photoURL = photoURL;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -118,6 +127,7 @@ public class User {
                 ", age=" + age +
                 ", sex=" + sex +
                 ", createDate=" + createDate +
+                ", photoURL='" + photoURL + '\'' +
                 '}';
     }
 }

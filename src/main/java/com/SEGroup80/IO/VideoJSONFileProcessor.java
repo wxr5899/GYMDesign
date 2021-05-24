@@ -10,7 +10,7 @@ public class VideoJSONFileProcessor implements JSONFileProcessor{
     final static private String VideoFileURL = "src/main/resources/com/SEGroup80/Video/VideoFile.txt";
 
     @Override
-    public void writeJSON(Object o) {
+    public void writeJSON(Object o, String ID) {
 
         String jsonString = JSON.toJSONString(o);
 

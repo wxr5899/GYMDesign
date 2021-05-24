@@ -17,10 +17,11 @@ public class Coach extends User{
         super(identity, password, name, mail, phoneNumber, age, sex);
     }
 
-    public Coach(String identity, String password, String name, String mail, String phoneNumber, int age, boolean sex, ArrayList<Book> bookList, ArrayList<String> courseList) {
+    public Coach(String identity, String password, String name, String mail, String phoneNumber, int age, boolean sex, ArrayList<Book> bookList, ArrayList<String> courseList, String description) {
         super(identity, password, name, mail, phoneNumber, age, sex);
         this.bookList = bookList;
         this.courseList = courseList;
+        this.description = description;
     }
 
     public ArrayList<Book> getBookList() {
