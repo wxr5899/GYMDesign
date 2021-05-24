@@ -1,11 +1,6 @@
 package com.SEGroup80;
 
 import com.SEGroup80.Controller.LoginController;
-import com.SEGroup80.Pojo.BasicPojo.*;
-import com.SEGroup80.Pojo.UserPojo.Coach;
-import com.SEGroup80.Pojo.UserPojo.Manager;
-import com.SEGroup80.Pojo.UserPojo.Trainer;
-import com.SEGroup80.Pojo.UserPojo.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

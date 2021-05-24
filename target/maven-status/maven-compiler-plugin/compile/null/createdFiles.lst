@@ -10,10 +10,12 @@ com\SEGroup80\Controller\HomeController$4.class
 com\SEGroup80\IO\VideoJSONFileProcessor.class
 com\SEGroup80\Controller\LoginController.class
 com\SEGroup80\Service\PurchaseService.class
+com\SEGroup80\Controller\CoachInfoController$4.class
 com\SEGroup80\IO\CourseJSONFileProcessor.class
 com\SEGroup80\Controller\VideoPlayController$3$1.class
 com\SEGroup80\Controller\HomeController$5.class
 com\SEGroup80\Service\EnrollService.class
+com\SEGroup80\Controller\CoachInfoController$3.class
 com\SEGroup80\Controller\HomeController$2.class
 com\SEGroup80\Pojo\BasicPojo\Order.class
 com\SEGroup80\Service\DeleteService.class
