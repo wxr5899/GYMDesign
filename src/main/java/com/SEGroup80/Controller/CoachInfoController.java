@@ -45,6 +45,9 @@ public class CoachInfoController implements Initializable {
     @FXML
     private ImageView leftSwitchRec, rightSwitchRec, leftSwitchLiv, rightSwitchLiv;
 
+    @FXML
+    private ImageView course1, course2, course3;
+
     private String gender;
 
     private Parent root = null;
@@ -78,8 +81,16 @@ public class CoachInfoController implements Initializable {
         PhoneLabel.setText(coach.getPhoneNumber());
         Description.setText(coach.getDescription());
 
-        Image image = new Image("com/SEGroup80/Image/CoachImage/Coach1.png");
-        CoachPhoto.setImage(image);
+        ;
+        CoachPhoto.setImage(new Image("com/SEGroup80/Image/CoachImage/Coach1.png"));
+
+        course1.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course1.setPreserveRatio(false);
+        course2.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course2.setPreserveRatio(false);
+        course3.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course3.setPreserveRatio(false);
+
 
         ArrayList<String> courseIDArrayList = coach.getCourseList();
 
@@ -179,6 +190,7 @@ public class CoachInfoController implements Initializable {
                 }
             }
         });
+
 
     }
 }

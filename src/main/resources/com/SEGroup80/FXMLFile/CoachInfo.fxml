@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.CoachInfoController">
+<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.CoachInfoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="145.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#adb3b9" height="145.0" layoutX="136.0" opacity="0.45" stroke="BLACK" strokeType="INSIDE" width="465.0" />
@@ -40,10 +40,6 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Button fx:id="BackHome" layoutX="522.0" layoutY="51.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="64.0" style="-fx-background-color: grey;" textFill="WHITE" AnchorPane.leftAnchor="522.0" AnchorPane.topAnchor="51.0">
-         <font>
-            <Font name="Times New Roman" size="15.0" />
-         </font></Button>
       <Button fx:id="BookButton" layoutX="141.0" layoutY="106.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: black;" text="Private Lessons" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="12.0" />
@@ -75,8 +71,8 @@
                <children>
                   <Pane prefHeight="100.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
-                        <Label fx:id="course1Name" layoutX="21.0" layoutY="77.0" text="course name" />
-                        <ImageView fitHeight="79.0" fitWidth="103.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                        <Label fx:id="course1Name" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="79.0" text="course name" />
+                        <ImageView fx:id="course1" fitHeight="79.0" fitWidth="103.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/pic.PNG" />
                            </image>
@@ -85,14 +81,14 @@
                   </Pane>
                   <Pane prefHeight="112.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
-                        <ImageView fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label fx:id="course2Name" layoutX="21.0" layoutY="78.0" text="course name" />
+                        <ImageView fx:id="course2" fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="course2Name" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="79.0" text="course name" />
                      </children>
                   </Pane>
                   <Pane prefHeight="106.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
-                        <ImageView fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label fx:id="course3Name" layoutX="21.0" layoutY="78.0" text="course name" />
+                        <ImageView fx:id="course3" fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="course3Name" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="79.0" text="course name" />
                      </children>
                   </Pane>
                </children>
@@ -116,7 +112,7 @@
                <children>
                   <Pane prefHeight="100.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-background-color: white;">
                      <children>
-                        <Label fx:id="book1" alignment="CENTER" layoutX="20.0" layoutY="10.0" prefWidth="80.0" text="time1">
+                        <Label fx:id="book1" alignment="CENTER" layoutX="15.0" layoutY="10.0" prefWidth="80.0" text="time1">
                            <font>
                               <Font name="Times New Roman" size="12.0" />
                            </font></Label>
@@ -124,12 +120,15 @@
                   </Pane>
                   <Pane prefHeight="112.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-background-color: white;">
                      <children>
-                        <Label fx:id="book2" layoutX="20.0" layoutY="10.0" prefWidth="80.0" text="course name" />
+                        <Label fx:id="book2" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="10.0" prefWidth="80.0" text="time2">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font></Label>
                      </children>
                   </Pane>
                   <Pane prefHeight="106.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-background-color: white;">
                      <children>
-                        <Label fx:id="book3" layoutX="20.0" layoutY="10.0" prefWidth="80.0" text="course name" />
+                        <Label fx:id="book3" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="10.0" prefWidth="80.0" text="time3" />
                      </children>
                   </Pane>
                </children>
@@ -153,5 +152,14 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
+      <ImageView fitHeight="42.0" fitWidth="25.0" layoutX="561.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Icon/backIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BackHome" layoutX="561.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;" textFill="WHITE" AnchorPane.leftAnchor="561.0" AnchorPane.topAnchor="16.0">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>
