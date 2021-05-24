@@ -1,19 +1,26 @@
 package com.SEGroup80.Controller;
 
+import com.SEGroup80.App;
 import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Service.BookService;
 import com.SEGroup80.Tool.GetDateTool;
+import com.SEGroup80.Tool.PageTransTool;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,9 +31,12 @@ public class BookController implements Initializable {
 
     private int visableDays = 7;
 
+    private Coach coach;
+
+    private Parent root;
 
     @FXML
-    private Label coachName;
+    private AnchorPane rootLayout;
 
     @FXML
     private ChoiceBox dateChoiceBox;
@@ -36,6 +46,12 @@ public class BookController implements Initializable {
 
     @FXML
     private Rectangle rectangle5, rectangle6, rectangle7, rectangle8, rectangle9;
+
+    @FXML
+    private Label CoachName, CoachAge, CoachGender;
+
+    @FXML
+    private ImageView BackHomeImageView, BookImageView;
 
 
 
@@ -57,7 +73,8 @@ public class BookController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-        Coach coach = TemBean.getCoach();
+        coach = (Coach) TemBean.getCoach();
+        System.out.println(coach.toString());
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -150,6 +167,16 @@ public class BookController implements Initializable {
 
 
     public void checkOutBook() {
+
+        System.out.println("IM here");
+
+    }
+
+    public void BackToHome() throws IOException {
+
+        root = App.loadFXML("HomeInterface");
+
+        new PageTransTool().TransToAnotherPage(rootLayout, root);
 
 
 

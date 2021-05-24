@@ -52,6 +52,8 @@ public class CoachInfoController implements Initializable {
 
     private Parent root = null;
 
+    private Coach coach;
+
     private final int CourseNum = 3;
 
     private int courseIndex = 0;
@@ -68,7 +70,7 @@ public class CoachInfoController implements Initializable {
 
 
 
-        Coach coach = TemBean.getCoach();
+        coach = TemBean.getCoach();
 
         NameLabel.setText(coach.getName());
         AgeLabel.setText(String.valueOf(coach.getAge()));
@@ -181,6 +183,9 @@ public class CoachInfoController implements Initializable {
         BookButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+
+                TemBean.setCoach(coach);
+
                 try {
                     root = App.loadFXML("BookInterface");
                     new PageTransTool().TransToAnotherPage(rootLayout, root);

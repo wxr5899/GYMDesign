@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.BookController">
+<AnchorPane fx:id="rootLayout" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.BookController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="57.0" layoutX="38.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
       <Label layoutX="50.0" layoutY="62.0" prefHeight="50.0" prefWidth="100.0" text="DATE:">
@@ -113,21 +113,31 @@
                   <Image url="@../Image/CoachImage/Coach1.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="248.0" prefHeight="50.0" prefWidth="100.0" text="Bob Stove">
+            <Label fx:id="CoachName" alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="250.0" prefHeight="50.0" prefWidth="150.0" text="Bob Stove">
                <font>
                   <Font name="Times New Roman" size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BookImageView" fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="587.0" onMouseClicked="#checkOutBook" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/Icon/bookIcon.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="200.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BackHomeImageView" fitHeight="40.0" fitWidth="40.0" layoutX="200.0" layoutY="587.0" onMouseClicked="#BackToHome" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/Icon/homeIcon.png" />
                </image>
             </ImageView>
+            <Label fx:id="CoachAge" alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="296.0" prefHeight="50.0" prefWidth="80.0" text="Bob Stove">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="CoachGender" alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="350.0" prefHeight="50.0" prefWidth="100.0" text="Bob Stove">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
