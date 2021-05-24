@@ -17,7 +17,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -83,23 +82,32 @@ public class CoachInfoController implements Initializable {
         CoachPhoto.setImage(image);
 
         ArrayList<String> courseIDArrayList = coach.getCourseList();
-        ;
+
         SearchService searchService = new SearchService();
 
         for(String ID : courseIDArrayList) {
-            courseArrayList.add(searchService.SearchCourse(ID));
+            Course course = searchService.SearchCourse(ID);
+            if (course != null){
+                courseArrayList.add(searchService.SearchCourse(ID));
+            }
         }
 
         if (courseArrayList.size() > 0) {
             course1Name.setText(courseArrayList.get(0).getCourseName());
+        } else {
+            course1Name.setText("empty");
         }
 
         if (courseArrayList.size() > 1) {
             course2Name.setText(courseArrayList.get(1).getCourseName());
+        } else {
+            course1Name.setText("empty");
         }
 
         if (courseArrayList.size() > 2) {
             course3Name.setText(courseArrayList.get(2).getCourseName());
+        } else {
+            course3Name.setText("empty");
         }
 
 
@@ -111,19 +119,19 @@ public class CoachInfoController implements Initializable {
                     courseIndex += 1;
 
                     if (courseIndex * 3 >= courseIDArrayList.size()) {
-                        course1Name.setText("");
+                        course1Name.setText("empty");
                     } else {
                         course1Name.setText(courseArrayList.get(courseIndex * 3).getCourseName());
                     }
 
                     if (courseIndex * 3 + 1 >= courseIDArrayList.size()) {
-                        course2Name.setText("");
+                        course2Name.setText("empty");
                     } else {
                         course2Name.setText(courseArrayList.get(courseIndex * 3 + 1).getCourseName());
                     }
 
                     if (courseIndex * 3 + 2 >= courseIDArrayList.size()) {
-                        course3Name.setText("");
+                        course3Name.setText("empty");
                     } else {
                         course3Name.setText(courseArrayList.get(courseIndex * 3 + 2).getCourseName());
                     }
