@@ -35,6 +35,8 @@ public class BookController implements Initializable {
 
     private Parent root;
 
+    private ArrayList<Book> bookArrayList;
+
     @FXML
     private AnchorPane rootLayout;
 
@@ -59,6 +61,9 @@ public class BookController implements Initializable {
     public void bookClick(MouseEvent mouseEvent) {
 
         Rectangle rectangle = (Rectangle) mouseEvent.getSource();
+        if (rectangle.getId().equals(rectangle1.getId())){
+
+        }
 
         if (!rectangle.getFill().equals(Color.BLUE)) {
             if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
@@ -74,7 +79,17 @@ public class BookController implements Initializable {
 
 
         coach = (Coach) TemBean.getCoach();
-        System.out.println(coach.toString());
+
+        CoachName.setText(coach.getName());
+        CoachAge.setText("" + coach.getAge());
+
+
+        if (coach.isSex()) {
+            CoachGender.setText("Lady");
+        } else {
+            CoachGender.setText("Sir");
+        }
+
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -91,7 +106,9 @@ public class BookController implements Initializable {
 
                 BookService bookService = new BookService();
 
-                ArrayList<Book> bookArrayList = bookService.initBookArrangement(visableDays);
+                if (coach.getBookList() == null){
+                    bookArrayList = bookService.initBookArrangement(visableDays);
+                }
 
                 Book book = bookService.showBookArrangement(bookArrayList, date);
 
@@ -177,7 +194,6 @@ public class BookController implements Initializable {
         root = App.loadFXML("HomeInterface");
 
         new PageTransTool().TransToAnotherPage(rootLayout, root);
-
 
 
     }
