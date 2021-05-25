@@ -43,6 +43,8 @@ public class BookController implements Initializable {
 
     private ArrayList<String> timePointList = new ArrayList<>();
 
+    private DateTool dateTool = new DateTool();
+
     @FXML
     private AnchorPane rootLayout;
 
@@ -64,23 +66,23 @@ public class BookController implements Initializable {
 
 
     @FXML
-    public void bookClick(MouseEvent mouseEvent) {
+    public void bookClick(MouseEvent mouseEvent) throws ParseException {
 
         Rectangle rectangle = (Rectangle) mouseEvent.getSource();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
 
-        Date currentTimePoint = new Date();
+        String currentTimePointStr = simpleDateFormat.format(new Date());
 
-        String currentTimePointStr = simpleDateFormat.format(currentTimePoint);
+        int index = Integer.parseInt("" + rectangle.getId().charAt(rectangle.getId().length() - 1)) - 1;
 
-        int index = rectangle.getId().charAt(rectangle.getId().length() - 1);
-
-        if (!rectangle.getFill().equals(Color.BLUE)) {
-            if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
-                rectangle.setFill(Color.WHITE);
-            } else {
-                rectangle.setFill(Color.BLACK);
+        if (dateTool.CompareTimeString(currentTimePointStr, timePointList.get(index), simpleDateFormat)) {
+            if (!rectangle.getFill().equals(Color.BLUE)) {
+                if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
+                    rectangle.setFill(Color.WHITE);
+                } else {
+                    rectangle.setFill(Color.BLACK);
+                }
             }
         }
     }
@@ -92,9 +94,17 @@ public class BookController implements Initializable {
             Init the time point of the class
          */
 
-        for (int i = 0; i < liveClassNum; i++) {
-            timePointList.add()
-        }
+        timePointList.add("08:00:00");
+        timePointList.add("09:00:00");
+        timePointList.add("10:00:00");
+        timePointList.add("11:00:00");
+
+        timePointList.add("14:00:00");
+        timePointList.add("15:00:00");
+        timePointList.add("16:00:00");
+
+        timePointList.add("20:00:00");
+        timePointList.add("21:00:00");
 
 
         coach = (Coach) TemBean.getCoach();
