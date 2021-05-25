@@ -31,6 +31,8 @@ public class BookController implements Initializable {
 
     private int visableDays = 7;
 
+    private final int liveClassNum = 9;
+
     private Coach coach;
 
     private Parent root;
@@ -38,6 +40,8 @@ public class BookController implements Initializable {
     private ArrayList<Book> bookArrayList;
 
     private String dateStr;
+
+    private ArrayList<String> timePointList = new ArrayList<>();
 
     @FXML
     private AnchorPane rootLayout;
@@ -63,6 +67,13 @@ public class BookController implements Initializable {
     public void bookClick(MouseEvent mouseEvent) {
 
         Rectangle rectangle = (Rectangle) mouseEvent.getSource();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+
+        Date currentTimePoint = new Date();
+
+        String currentTimePointStr = simpleDateFormat.format(currentTimePoint);
+
         int index = rectangle.getId().charAt(rectangle.getId().length() - 1);
 
         if (!rectangle.getFill().equals(Color.BLUE)) {
@@ -76,6 +87,14 @@ public class BookController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        /*
+            Init the time point of the class
+         */
+
+        for (int i = 0; i < liveClassNum; i++) {
+            timePointList.add()
+        }
 
 
         coach = (Coach) TemBean.getCoach();
