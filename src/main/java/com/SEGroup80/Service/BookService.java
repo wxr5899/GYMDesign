@@ -28,7 +28,7 @@ public class BookService {
         return bookArrayList;
     }
 
-    //TODO: Finish the function.
+
     public ArrayList<Book> extractFutureBookArrangement(Coach coach, int visableDays) throws ParseException {
 
         DateTool dateTool = new DateTool();
@@ -83,10 +83,8 @@ public class BookService {
                 return book;
             }
         }
-
         System.out.println("Can't find the book!");
         return null;
-
     }
 
 
