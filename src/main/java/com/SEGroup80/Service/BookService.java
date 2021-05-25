@@ -2,6 +2,8 @@ package com.SEGroup80.Service;
 import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Tool.DateTool;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,11 +29,21 @@ public class BookService {
     }
 
     //TODO: Finish the function.
-    public ArrayList<Book> extractFutureBookArrangement(Coach coach) {
+    public ArrayList<Book> extractFutureBookArrangement(Coach coach, int visableDays) throws ParseException {
+
+        DateTool dateTool = new DateTool();
 
         ArrayList<Book> extantBookList = null;
 
-        ArrayList<Book> futureBookList = initBookArrangement(7);
+        ArrayList<Book> futureBookList = initBookArrangement(visableDays);
+
+        ArrayList<Book> mergedBookList = new ArrayList<>();
+
+        Date today = new Date();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        String todayStr = simpleDateFormat.format(today);
 
         Book lastBook = null;
 
@@ -40,16 +52,27 @@ public class BookService {
             lastBook = extantBookList.get(extantBookList.size() - 1);
         }
 
+        int num = 0;
+
         if (lastBook != null) {
+            if (dateTool.CompareTimeString(lastBook.getDate(), todayStr, simpleDateFormat)){
+                return futureBookList;
+            } else {
+                for (Book book : extantBookList){
+                    if (dateTool.CompareTimeString(todayStr, book.getDate(), simpleDateFormat)) {
+                        mergedBookList.add(book);
+                        num += 1;
+                    }
+                }
 
+                for (int i = num - 1; i < visableDays; i++) {
+                    mergedBookList.add(futureBookList.get(i));
+                }
+                return mergedBookList;
+            }
+        } else {
+            return futureBookList;
         }
-
-        ArrayList<Book> bookList = new ArrayList<>();
-
-
-
-        return bookList;
-
     }
 
 
