@@ -26,11 +26,13 @@ public class BookService {
         return bookArrayList;
     }
 
+    //TODO: Finish the function.
     public ArrayList<Book> extractFutureBookArrangement(Coach coach) {
 
         ArrayList<Book> bookArrayList = null;
 
         bookArrayList = coach.getBookList();
+
 
         for(Book book : bookArrayList) {
             ArrayList<Integer> timeTable = book.getTimeTable();
