@@ -5,7 +5,7 @@ import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Service.BookService;
-import com.SEGroup80.Tool.GetDateTool;
+import com.SEGroup80.Tool.DateTool;
 import com.SEGroup80.Tool.PageTransTool;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,7 +19,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -94,7 +93,7 @@ public class BookController implements Initializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         for (int i = 0; i < visableDays; i++) {
-            Date day = new GetDateTool().getBeforeOrAfterDate(new Date(),i);
+            Date day = new DateTool().getBeforeOrAfterDate(new Date(),i);
             dateChoiceBox.getItems().addAll(""+sdf.format(day));
         }
 

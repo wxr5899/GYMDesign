@@ -1,7 +1,7 @@
 package com.SEGroup80.Service;
 import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.UserPojo.Coach;
-import com.SEGroup80.Tool.GetDateTool;
+import com.SEGroup80.Tool.DateTool;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +15,7 @@ public class BookService {
         ArrayList<Book> bookArrayList = new ArrayList<Book>();
 
         for (int i = 0; i < visableDays; i++) {
-            Date day = new GetDateTool().getBeforeOrAfterDate(new Date(),i);
+            Date day = new DateTool().getBeforeOrAfterDate(new Date(),i);
             ArrayList<Integer> timeTable = new ArrayList<Integer>();
             for (int j = 0; j < 9; j++) {
                 timeTable.add(0);
