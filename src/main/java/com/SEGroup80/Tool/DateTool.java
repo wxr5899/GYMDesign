@@ -17,7 +17,7 @@ public class DateTool {
 
 
     /**
-     *
+     * Compare two time points
      * @param startPoint The 1st time point
      * @param endPoint The 2nd time point
      * @param simpleDateFormat with right format of time point
