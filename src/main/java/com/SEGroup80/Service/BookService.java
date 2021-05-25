@@ -33,10 +33,12 @@ public class BookService {
 
         bookArrayList = coach.getBookList();
 
-
         for(Book book : bookArrayList) {
-            ArrayList<Integer> timeTable = book.getTimeTable();
-            String date = book.getDate();
+            if (book != null){
+                ArrayList<Integer> timeTable = book.getTimeTable();
+                String date = book.getDate();
+            }
+            System.out.println(book.toString());
         }
 
         return bookArrayList;
