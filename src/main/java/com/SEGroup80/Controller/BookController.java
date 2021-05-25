@@ -21,6 +21,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -107,12 +108,15 @@ public class BookController implements Initializable {
 
                 if (coach.getBookList() == null){
                     bookArrayList = bookService.initBookArrangement(visableDays);
+                } else {
+                    try {
+                        bookArrayList = bookService.extractFutureBookArrangement(coach, visableDays);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 Book book = bookService.showBookArrangement(bookArrayList, date);
-
-                System.out.println(book);
-                book.getTimeTable().set(0,1);
 
                 if (book.getTimeTable().get(0) == 0){
                     rectangle1.setFill(Color.WHITE);

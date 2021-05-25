@@ -75,7 +75,6 @@ public class BookService {
         }
     }
 
-
     public Book showBookArrangement (ArrayList<Book> bookList, String date) {
 
         for (Book book : bookList) {
