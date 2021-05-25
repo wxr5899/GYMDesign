@@ -29,17 +29,22 @@ public class BookService {
     //TODO: Finish the function.
     public ArrayList<Book> extractFutureBookArrangement(Coach coach) {
 
-        ArrayList<Book> bookArrayList = null;
+        ArrayList<Book> extantBookList = null;
 
-        bookArrayList = coach.getBookList();
+        ArrayList<Book> futureBookList = initBookArrangement(7);
 
-        for(Book book : bookArrayList) {
-            if (book != null){
-                ArrayList<Integer> timeTable = book.getTimeTable();
-                String date = book.getDate();
-            }
-            System.out.println(book.toString());
+        Book lastBook = null;
+
+        extantBookList = coach.getBookList();
+        if (!extantBookList.isEmpty()){
+            lastBook = extantBookList.get(extantBookList.size() - 1);
         }
+
+        if (lastBook != null) {
+
+        }
+
+
 
         return bookArrayList;
 
