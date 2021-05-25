@@ -37,6 +37,8 @@ public class BookController implements Initializable {
 
     private ArrayList<Book> bookArrayList;
 
+    private String dateStr;
+
     @FXML
     private AnchorPane rootLayout;
 
@@ -61,9 +63,7 @@ public class BookController implements Initializable {
     public void bookClick(MouseEvent mouseEvent) {
 
         Rectangle rectangle = (Rectangle) mouseEvent.getSource();
-        if (rectangle.getId().equals(rectangle1.getId())){
-
-        }
+        int index = rectangle.getId().charAt(rectangle.getId().length() - 1);
 
         if (!rectangle.getFill().equals(Color.BLUE)) {
             if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
