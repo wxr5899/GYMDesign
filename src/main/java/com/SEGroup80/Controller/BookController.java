@@ -90,6 +90,7 @@ public class BookController implements Initializable {
                         book.getTimeTable().set(timePointIndex, 1);
                     }
                     bookArrayList.set(dateIndex, book);
+                    System.out.println(bookArrayList);
                 }
             }
         }
@@ -143,17 +144,18 @@ public class BookController implements Initializable {
 
                 BookService bookService = new BookService();
 
-                if (coach.getBookList() == null){
-                    bookArrayList = bookService.initBookArrangement(visableDays);
-                } else {
-                    try {
-                        bookArrayList = bookService.extractFutureBookArrangement(coach, visableDays);
-                    } catch (ParseException e) {
-                        e.printStackTrace();
+                if (bookArrayList == null){
+                    if (coach.getBookList() == null){
+                        bookArrayList = bookService.initBookArrangement(visableDays);
+                    } else {
+                        try {
+                            bookArrayList = bookService.extractFutureBookArrangement(coach, visableDays);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
                     }
+
                 }
-
-
 
                 book = bookService.showBookArrangement(bookArrayList, date);
 
@@ -162,6 +164,8 @@ public class BookController implements Initializable {
                 System.out.println(book);
 
                 dateIndex = bookArrayList.indexOf(book);
+
+                System.out.println("date Index:" + dateIndex);
 
                 if (book.getTimeTable().get(0) == 0){
                     rectangle1.setFill(Color.WHITE);
