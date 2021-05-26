@@ -5,6 +5,7 @@ import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Service.BookService;
+import com.SEGroup80.Service.ModifyFileService;
 import com.SEGroup80.Tool.DateTool;
 import com.SEGroup80.Tool.PageTransTool;
 import javafx.beans.value.ChangeListener;
@@ -36,6 +37,10 @@ public class BookController implements Initializable {
     private Coach coach;
 
     private Parent root;
+
+    private Book book;
+
+    private int index;
 
     private ArrayList<Book> bookArrayList;
 
@@ -74,14 +79,18 @@ public class BookController implements Initializable {
 
         String currentTimePointStr = simpleDateFormat.format(new Date());
 
-        int index = Integer.parseInt("" + rectangle.getId().charAt(rectangle.getId().length() - 1)) - 1;
+        index = Integer.parseInt("" + rectangle.getId().charAt(rectangle.getId().length() - 1)) - 1;
 
-        if (dateTool.CompareTimeString(currentTimePointStr, timePointList.get(index), simpleDateFormat)) {
-            if (!rectangle.getFill().equals(Color.BLUE)) {
-                if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
-                    rectangle.setFill(Color.WHITE);
-                } else {
-                    rectangle.setFill(Color.BLACK);
+        if (dateChoiceBox.getValue() != null) {
+            if (dateTool.CompareTimeString(currentTimePointStr, timePointList.get(index), simpleDateFormat)) {
+                if (rectangle.getOpacity() != 0.5) {
+                    if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
+                        rectangle.setFill(Color.WHITE);
+                        book.getTimeTable().set(index, 0);
+                    } else {
+                        rectangle.setFill(Color.BLACK);
+                        book.getTimeTable().set(index, 1);
+                    }
                 }
             }
         }
@@ -145,7 +154,7 @@ public class BookController implements Initializable {
                     }
                 }
 
-                Book book = bookService.showBookArrangement(bookArrayList, date);
+                book = bookService.showBookArrangement(bookArrayList, date);
 
                 if (book.getTimeTable().get(0) == 0){
                     rectangle1.setFill(Color.WHITE);
@@ -215,9 +224,10 @@ public class BookController implements Initializable {
     }
 
 
-    public void checkOutBook() {
+    public void checkOutBook() throws IOException {
 
-        System.out.println("IM here");
+        coach.setBookList(bookArrayList);
+        new ModifyFileService().modifyUserFile(coach);
 
     }
 
