@@ -74,13 +74,29 @@ public class BookController implements Initializable {
         Rectangle rectangle = (Rectangle) mouseEvent.getSource();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         String currentTimePointStr = simpleDateFormat.format(new Date());
 
         timePointIndex = Integer.parseInt("" + rectangle.getId().charAt(rectangle.getId().length() - 1)) - 1;
 
         if (dateChoiceBox.getValue() != null) {
-            if (dateTool.CompareTimeString(currentTimePointStr, timePointList.get(timePointIndex), simpleDateFormat)) {
+
+            if (dateChoiceBox.getValue().equals(dateFormat.format(new Date()))){
+                if (dateTool.CompareTimeString(currentTimePointStr, timePointList.get(timePointIndex), simpleDateFormat)) {
+                    if (rectangle.getOpacity() != 0.5) {
+                        if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
+                            rectangle.setFill(Color.WHITE);
+                            book.getTimeTable().set(timePointIndex, 0);
+                        } else {
+                            rectangle.setFill(Color.BLACK);
+                            book.getTimeTable().set(timePointIndex, 1);
+                        }
+                        bookArrayList.set(dateIndex, book);
+                        System.out.println(bookArrayList);
+                    }
+                }
+            } else {
                 if (rectangle.getOpacity() != 0.5) {
                     if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
                         rectangle.setFill(Color.WHITE);
@@ -102,6 +118,15 @@ public class BookController implements Initializable {
         /*
             Init the time point of the class
          */
+        rectangle1.setOpacity(1);
+        rectangle2.setOpacity(1);
+        rectangle3.setOpacity(1);
+        rectangle4.setOpacity(1);
+        rectangle5.setOpacity(1);
+        rectangle6.setOpacity(1);
+        rectangle7.setOpacity(1);
+        rectangle8.setOpacity(1);
+        rectangle9.setOpacity(1);
 
         timePointList.add("08:00:00");
         timePointList.add("09:00:00");
@@ -144,9 +169,10 @@ public class BookController implements Initializable {
 
                 BookService bookService = new BookService();
 
+
                 if (bookArrayList == null){
                     if (coach.getBookList() == null){
-                        bookArrayList = bookService.initBookArrangement(visableDays);
+                        bookArrayList = bookService.initBookArrangement(coach.getUserID(), visableDays);
                     } else {
                         try {
                             bookArrayList = bookService.extractFutureBookArrangement(coach, visableDays);
@@ -237,7 +263,10 @@ public class BookController implements Initializable {
     @FXML
     public void checkOutBook() throws IOException {
         coach.setBookList(bookArrayList);
+        System.out.println(coach.toString());
         new ModifyFileService().modifyUserFile(coach);
+        TemBean.setCoach(coach);
+        BackToHome();
     }
 
     @FXML

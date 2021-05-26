@@ -1,16 +1,27 @@
 package com.SEGroup80.Pojo.BasicPojo;
 
+import com.SEGroup80.Pojo.UserPojo.Trainer;
+
 import java.util.ArrayList;
 
 public class Book {
 
+    private String trainerID;
+    private String coachID;
     private String date;
     private ArrayList<Integer> timeTable;
 
     public Book() {
     }
 
-    public Book(String date, ArrayList<Integer> timeTable) {
+//    public Book(String date, ArrayList<Integer> timeTable) {
+//        this.date = date;
+//        this.timeTable = timeTable;
+//    }
+
+    public Book(String trainerID, String coachID, String date, ArrayList<Integer> timeTable) {
+        this.trainerID = trainerID;
+        this.coachID = coachID;
         this.date = date;
         this.timeTable = timeTable;
     }
@@ -34,7 +45,9 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "date='" + date + '\'' +
+                "trainerID='" + trainerID + '\'' +
+                ", coachID='" + coachID + '\'' +
+                ", date='" + date + '\'' +
                 ", timeTable=" + timeTable +
                 '}';
     }

@@ -32,6 +32,10 @@ public class DateTool {
         Date beginDate = simpleDateFormat.parse(beginTime);
         Date endDate = simpleDateFormat.parse(endTime);
 
+        if (!beginDate.after(endDate) && !beginDate.before(endDate)){
+            return true;
+        }
+
         return beginDate.before(endDate);
     }
 

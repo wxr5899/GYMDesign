@@ -58,4 +58,14 @@ public class Trainer extends User {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+    @Override
+    public String toString() {
+        return "Trainer{" +
+                "subscribeCoachList=" + subscribeCoachList +
+                ", friendList=" + friendList +
+                ", bodyRecord=" + bodyRecord +
+                ", balance=" + balance +
+                '}';
+    }
 }

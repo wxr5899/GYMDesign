@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class BookService {
 
-    public ArrayList<Book> initBookArrangement(int visableDays) {
+    public ArrayList<Book> initBookArrangement(String coachID, int visableDays) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -22,20 +22,20 @@ public class BookService {
             for (int j = 0; j < 9; j++) {
                 timeTable.add(0);
             }
-            bookArrayList.add(new Book(""+sdf.format(day), timeTable));
+            bookArrayList.add(new Book(null, coachID,""+sdf.format(day), timeTable));
         }
 
         return bookArrayList;
     }
 
-
+    //TODO: There is a bug
     public ArrayList<Book> extractFutureBookArrangement(Coach coach, int visableDays) throws ParseException {
 
         DateTool dateTool = new DateTool();
 
         ArrayList<Book> extantBookList = null;
 
-        ArrayList<Book> futureBookList = initBookArrangement(visableDays);
+        ArrayList<Book> futureBookList = initBookArrangement(coach.getUserID(), visableDays);
 
         ArrayList<Book> mergedBookList = new ArrayList<>();
 
@@ -65,7 +65,7 @@ public class BookService {
                     }
                 }
 
-                for (int i = num - 1; i < visableDays; i++) {
+                for (int i = num; i < visableDays; i++) {
                     mergedBookList.add(futureBookList.get(i));
                 }
                 return mergedBookList;

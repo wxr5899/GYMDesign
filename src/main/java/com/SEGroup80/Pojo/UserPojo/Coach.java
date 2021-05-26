@@ -47,4 +47,13 @@ public class Coach extends User{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Coach{" +
+                "description='" + description + '\'' +
+                ", bookList=" + bookList +
+                ", courseList=" + courseList +
+                '}';
+    }
 }
