@@ -44,8 +44,6 @@ public class BookController implements Initializable {
 
     private ArrayList<Book> bookArrayList;
 
-    private String dateStr;
-
     private ArrayList<String> timePointList = new ArrayList<>();
 
     private DateTool dateTool = new DateTool();
@@ -91,6 +89,7 @@ public class BookController implements Initializable {
                         rectangle.setFill(Color.BLACK);
                         book.getTimeTable().set(index, 1);
                     }
+                    bookArrayList.set(index, book);
                 }
             }
         }
