@@ -40,7 +40,9 @@ public class BookController implements Initializable {
 
     private Book book;
 
-    private int index;
+    private int timePointIndex;
+
+    private int dateIndex;
 
     private ArrayList<Book> bookArrayList;
 
@@ -75,19 +77,19 @@ public class BookController implements Initializable {
 
         String currentTimePointStr = simpleDateFormat.format(new Date());
 
-        index = Integer.parseInt("" + rectangle.getId().charAt(rectangle.getId().length() - 1)) - 1;
+        timePointIndex = Integer.parseInt("" + rectangle.getId().charAt(rectangle.getId().length() - 1)) - 1;
 
         if (dateChoiceBox.getValue() != null) {
-            if (dateTool.CompareTimeString(currentTimePointStr, timePointList.get(index), simpleDateFormat)) {
+            if (dateTool.CompareTimeString(currentTimePointStr, timePointList.get(timePointIndex), simpleDateFormat)) {
                 if (rectangle.getOpacity() != 0.5) {
                     if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
                         rectangle.setFill(Color.WHITE);
-                        book.getTimeTable().set(index, 0);
+                        book.getTimeTable().set(timePointIndex, 0);
                     } else {
                         rectangle.setFill(Color.BLACK);
-                        book.getTimeTable().set(index, 1);
+                        book.getTimeTable().set(timePointIndex, 1);
                     }
-                    bookArrayList.set(index, book);
+                    bookArrayList.set(dateIndex, book);
                 }
             }
         }
@@ -151,7 +153,15 @@ public class BookController implements Initializable {
                     }
                 }
 
+
+
                 book = bookService.showBookArrangement(bookArrayList, date);
+
+                //TODO:
+                System.out.println(bookArrayList);
+                System.out.println(book);
+
+                dateIndex = bookArrayList.indexOf(book);
 
                 if (book.getTimeTable().get(0) == 0){
                     rectangle1.setFill(Color.WHITE);
