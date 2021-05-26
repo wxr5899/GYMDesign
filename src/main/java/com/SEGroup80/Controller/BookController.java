@@ -66,8 +66,6 @@ public class BookController implements Initializable {
     @FXML
     private ImageView BackHomeImageView, BookImageView;
 
-
-
     @FXML
     public void bookClick(MouseEvent mouseEvent) throws ParseException {
 
@@ -222,21 +220,16 @@ public class BookController implements Initializable {
 
     }
 
-
+    @FXML
     public void checkOutBook() throws IOException {
-
         coach.setBookList(bookArrayList);
         new ModifyFileService().modifyUserFile(coach);
-
     }
 
+    @FXML
     public void BackToHome() throws IOException {
-
         root = App.loadFXML("HomeInterface");
-
         new PageTransTool().TransToAnotherPage(rootLayout, root);
-
-
     }
 
 }
