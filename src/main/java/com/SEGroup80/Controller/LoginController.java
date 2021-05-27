@@ -1,6 +1,10 @@
 package com.SEGroup80.Controller;
 
 import com.SEGroup80.App;
+import com.SEGroup80.Bean.TemBean;
+import com.SEGroup80.Pojo.UserPojo.Coach;
+import com.SEGroup80.Pojo.UserPojo.Manager;
+import com.SEGroup80.Pojo.UserPojo.Trainer;
 import com.SEGroup80.Pojo.UserPojo.User;
 import com.SEGroup80.Service.SearchService;
 import javafx.fxml.FXML;
@@ -49,10 +53,16 @@ public class LoginController implements Initializable {
 
     private Scene scene;
 
+    private Coach coach;
+
+    private Trainer trainer;
+
+    private Manager manager;
+
 
     public void LoadLoginInterface(Stage stage) throws IOException {
 
-        root = App.loadFXML("HomeInterface");
+        root = App.loadFXML("LoginInterface");
         scene = new Scene(root);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
@@ -101,6 +111,10 @@ public class LoginController implements Initializable {
         } else {
             User user = (User) new SearchService().SearchUser(uID, 1).get(0);
 
+            recUserType(user);
+
+
+
             if (user == null){
                 warnLabel.setText("This user does not exist!");
             } else {
@@ -144,5 +158,19 @@ public class LoginController implements Initializable {
         Stage stage = (Stage)rootLayout.getScene().getWindow();
         stage.close();
         System.exit(0);
+    }
+
+
+    public void recUserType(User user) {
+        if (user.getUserID().charAt(0) == 'C') {
+            coach = (Coach) user;
+            TemBean.setCoach(coach);
+        } else if (user.getUserID().charAt(0) == 'M') {
+            manager = (Manager) user;
+            TemBean.setManager(manager);
+        } else if (user.getUserID().charAt(0) == 'T'){
+            trainer = (Trainer) user;
+            TemBean.setTrainer(trainer);
+        }
     }
 }

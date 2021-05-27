@@ -1,7 +1,4 @@
-import com.SEGroup80.IO.CourseJSONFileProcessor;
-import com.SEGroup80.IO.VideoJSONFileProcessor;
 import com.SEGroup80.Pojo.BasicPojo.Book;
-import com.SEGroup80.Pojo.BasicPojo.Video;
 
 import java.util.ArrayList;
 
@@ -14,7 +11,5 @@ public class Test {
         System.out.println(bookArrayList.isEmpty());
         System.out.println(bookArrayList.size());
     }
-
-
 }
 
