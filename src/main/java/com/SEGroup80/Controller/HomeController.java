@@ -4,6 +4,7 @@ import com.SEGroup80.App;
 import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Video;
 import com.SEGroup80.Pojo.UserPojo.Coach;
+import com.SEGroup80.Pojo.UserPojo.Trainer;
 import com.SEGroup80.Pojo.UserPojo.User;
 import com.SEGroup80.Service.SearchService;
 import com.SEGroup80.Tool.PageTransTool;
@@ -107,6 +108,9 @@ public class HomeController implements Initializable {
      */
     @FXML
     private Label PrName, PrAge, PrIdentity, PrGender, PrMail, PrPhone;
+
+    @FXML
+    private VBox friendVBox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -442,6 +446,20 @@ public class HomeController implements Initializable {
         PrMail.setText("Mail:" + user.getMail());
         PrPhone.setText("Call:" + user.getPhoneNumber());
         PrName.setText(user.getName());
+
+        if (identity.equals("Trainer")) {
+            Trainer trainer = (Trainer) user;
+            if (trainer.getFriendList() != null){
+
+                for (String friendID : trainer.getFriendList()){
+                    String friendName = ((User) searchService.SearchUser(friendID, 1).get(0)).getName();
+                    Label friendNameLabel = new Label(friendName);
+
+                }
+            }
+        }
+
+
 
     }
 
