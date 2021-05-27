@@ -211,35 +211,35 @@
                            <children>
                               <Label fx:id="PrIdentity" layoutX="24.0" layoutY="88.0" prefHeight="15.0" prefWidth="150.0" text="Identity" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="14.0" />
                                  </font>
                               </Label>
                               <Label fx:id="PrName" layoutX="24.0" layoutY="43.0" prefHeight="15.0" prefWidth="150.0" text="Name" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="14.0" />
                                  </font>
                               </Label>
                               <Label fx:id="PrGender" layoutX="24.0" layoutY="133.0" prefHeight="15.0" prefWidth="150.0" text="Gender" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="PrMail" layoutX="241.0" layoutY="88.0" prefHeight="15.0" prefWidth="150.0" text="Email" textFill="WHITE">
+                              <Label fx:id="PrMail" layoutX="241.0" layoutY="88.0" prefHeight="15.0" prefWidth="250.0" text="Email" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="14.0" />
                                  </font>
                               </Label>
                               <Label fx:id="PrAge" layoutX="241.0" layoutY="43.0" prefHeight="15.0" prefWidth="150.0" text="Age" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="14.0" />
                                  </font>
                               </Label>
                               <Label fx:id="PrPhone" layoutX="241.0" layoutY="133.0" prefHeight="15.0" prefWidth="150.0" text="Phone" textFill="WHITE">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="14.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="450.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="500.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../Image/logo.png" />
                                  </image>

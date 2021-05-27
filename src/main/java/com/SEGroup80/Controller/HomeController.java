@@ -439,8 +439,8 @@ public class HomeController implements Initializable {
             gender = "Sir";
         }
         PrGender.setText(gender);
-        PrMail.setText(user.getMail());
-        PrPhone.setText(user.getPhoneNumber());
+        PrMail.setText("Mail:" + user.getMail());
+        PrPhone.setText("Call:" + user.getPhoneNumber());
         PrName.setText(user.getName());
 
     }
