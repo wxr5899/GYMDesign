@@ -9,6 +9,7 @@
 
 import com.SEGroup80.Pojo.BasicPojo.Body;
 import com.SEGroup80.Pojo.BasicPojo.Comment;
+import com.SEGroup80.Pojo.BasicPojo.MemberShip;
 import com.SEGroup80.Pojo.BasicPojo.Video;
 import com.SEGroup80.Pojo.CoursePojo.Course;
 import com.SEGroup80.Pojo.CoursePojo.RecordCourse;
@@ -268,11 +269,12 @@ public class DataProducer {
             }
         }
 
+        MemberShip memberShip = new MemberShip(true, "2021-09-01");
+
         for (int i = 0; i < trainerNum; i++) {
-            User trainer =  new Trainer("Trainer", "123456", trainerNameList.get(i), phoneList.get(i) + mailList.get(i), phoneList.get(i), (20 + 285 % (i+1)), genderList.get(i), 500, subCoach.get(i), subFriend.get(i), bodyArrayList);
+            User trainer =  new Trainer("Trainer", "123456", trainerNameList.get(i), phoneList.get(i) + mailList.get(i), phoneList.get(i), (20 + 285 % (i+1)), genderList.get(i), 500, subCoach.get(i), subFriend.get(i), bodyArrayList, memberShip);
             enrollService.userEnroll(trainer);
         }
-
 
         // Coach:
         int coachNum = 4;

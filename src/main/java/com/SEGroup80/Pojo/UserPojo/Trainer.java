@@ -1,6 +1,7 @@
 package com.SEGroup80.Pojo.UserPojo;
 
 import com.SEGroup80.Pojo.BasicPojo.Body;
+import com.SEGroup80.Pojo.BasicPojo.MemberShip;
 
 import java.util.ArrayList;
 
@@ -10,6 +11,7 @@ public class Trainer extends User {
     private ArrayList<String> friendList;
     private ArrayList<Body> bodyRecord;
     private double balance;
+    private MemberShip memberShip;
 
     public Trainer() {
     }
@@ -19,12 +21,13 @@ public class Trainer extends User {
         this.balance = balance;
     }
 
-    public Trainer(String identity, String password, String name, String mail, String phoneNumber, int age, boolean sex, double balance, ArrayList<String> subscribeCoachList, ArrayList<String> friendList, ArrayList<Body> bodyRecord) {
+    public Trainer(String identity, String password, String name, String mail, String phoneNumber, int age, boolean sex, double balance, ArrayList<String> subscribeCoachList, ArrayList<String> friendList, ArrayList<Body> bodyRecord, MemberShip memberShip) {
         super(identity, password, name, mail, phoneNumber, age, sex);
         this.subscribeCoachList = subscribeCoachList;
         this.friendList = friendList;
         this.bodyRecord = bodyRecord;
         this.balance = balance;
+        this.memberShip = memberShip;
     }
 
     public ArrayList<String> getSubscribeCoachList() {
