@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -454,7 +455,13 @@ public class HomeController implements Initializable {
                 for (String friendID : trainer.getFriendList()){
                     String friendName = ((User) searchService.SearchUser(friendID, 1).get(0)).getName();
                     Label friendNameLabel = new Label(friendName);
-
+                    friendNameLabel.setPrefWidth(150);
+                    friendNameLabel.setPrefHeight(30);
+                    friendNameLabel.setLayoutX(90);
+                    friendNameLabel.setPadding(new Insets(10 , 10, 10, 10));
+                    friendNameLabel.setStyle("-fx-font: Times New Roman");
+                    friendNameLabel.setStyle("-fx-font-size: 14px");
+                    friendVBox.getChildren().add(friendNameLabel);
                 }
             }
         }

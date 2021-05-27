@@ -267,6 +267,7 @@
                               <Line endX="280.0" layoutY="100.0" strokeWidth="2.5" />
                            </children>
                         </AnchorPane>
+                        <VBox fx:id="friendVBox" layoutY="100.0" prefHeight="418.0" prefWidth="280.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="284.0" layoutY="200.0" prefHeight="270.0" prefWidth="238.0" style="-fx-border-color: black;">
