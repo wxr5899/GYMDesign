@@ -113,7 +113,6 @@
                     </content>
                   </ScrollPane>
                </children></Pane>
-            <Pane fx:id="accountPane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: green;" />
             <Pane fx:id="homePane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
                <children>
                   <VBox fx:id="homeVBox" prefHeight="720.0" prefWidth="750.0">
@@ -195,6 +194,50 @@
                   <ScrollBar fx:id="coachScrollBar" layoutX="750.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="10.0" unitIncrement="10.0" />
                </children>
             </Pane>
+            <Pane fx:id="accountPane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="760.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <AnchorPane layoutX="150.0" prefHeight="200.0" prefWidth="610.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="200.0" prefHeight="520.0" prefWidth="280.0" style="-fx-border-color: black;">
+                     <children>
+                        <AnchorPane prefHeight="100.0" prefWidth="280.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="30.0" prefHeight="40.0" prefWidth="100.0" text="Friend List">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="280.0" layoutY="100.0" strokeWidth="2.5" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="284.0" layoutY="200.0" prefHeight="270.0" prefWidth="238.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="238.0" layoutX="69.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Icon/walletIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="69.0" layoutY="182.0" prefHeight="30.0" prefWidth="100.0" text="Wallet">
+                           <font>
+                              <Font name="Times New Roman Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="522.0" layoutY="200.0" prefHeight="270.0" prefWidth="238.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="155.0" fitWidth="238.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                  <Line endX="100.0" startX="-100.0" />
+                  <AnchorPane layoutX="284.0" layoutY="470.0" prefHeight="247.0" prefWidth="476.0" />
+               </children></Pane>
          </children>
       </AnchorPane>
    </children>

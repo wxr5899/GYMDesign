@@ -140,7 +140,7 @@ public class LoginController implements Initializable {
         scene = rootLayout.getScene();
 
         try {
-            root = App.loadFXML("videoPlay"); //progressBAR
+            root = App.loadFXML("HomeInterface"); //progressBAR
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -163,13 +163,15 @@ public class LoginController implements Initializable {
         if (user.getUserID().charAt(0) == 'C') {
             coach = (Coach) user;
             TemBean.setCoach(coach);
-
+            TemBean.setIdentity("Coach");
         } else if (user.getUserID().charAt(0) == 'M') {
             manager = (Manager) user;
             TemBean.setManager(manager);
+            TemBean.setIdentity("Manager");
         } else if (user.getUserID().charAt(0) == 'T'){
             trainer = (Trainer) user;
             TemBean.setTrainer(trainer);
+            TemBean.setIdentity("Trainer");
         }
     }
 }
