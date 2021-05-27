@@ -34,29 +34,13 @@ import java.util.ResourceBundle;
 
 
 public class HomeController implements Initializable {
-    /*
-       Initial parameters: popVideo
-     */
+
     private final int popVideoNum = 4;
-    private final int popVideoCoverX = 14;
-    private final int popVideoCoverY = 25;
-    private final int popVideoNameLabelX = 257;
-    private final int popVideoNameLabelY = 65;
     private final int popVideoLikeLabelX = 14;
     private final int popVideoLikeLabelY = 149;
     private final int popVideoCollectLabelX = 164;
     private final int popVideoCollectLabelY = 149;
-
-    /*
-       Initial parameters: popProduct
-     */
-    private final int popProductNum = 4;
-
-    /*
-       Initial parameters: popCourse
-     */
     private final int popCourseNum = 6;
-
     private final int popCoachNum = 4;
 
     /*
@@ -72,6 +56,7 @@ public class HomeController implements Initializable {
     private final String style2 = "-fx-background-color: black;";
     private Parent root = null;
     private Scene scene;
+    private User user;
 
     @FXML
     private AnchorPane rootLayout;
@@ -116,10 +101,26 @@ public class HomeController implements Initializable {
     @FXML
     private VBox coachVBox;
 
-    static int j = 0;
+
+    /*
+        Nodes in Account Pane
+     */
+    @FXML
+    private Label PrName, PrAge, PrIdentity, PrGender, PrMail, PrPhone;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        String identity = TemBean.getIdentity();
+
+        if ("Coach".equals(identity)) {
+            user = TemBean.getCoach();
+        } else if ("Trainer".equals(identity)) {
+            user = TemBean.getTrainer();
+        } else {
+            user = TemBean.getManager();
+        }
+
 
         ArrayList<Video> videoArrayList = new ArrayList<Video>();
 
@@ -428,10 +429,19 @@ public class HomeController implements Initializable {
                     coachVBox.setLayoutY(-newValue.doubleValue());
                 }
             });
-
-
-
         }
+
+
+        PrAge.setText("Age: " + user.getAge());
+        PrIdentity.setText("Identity: " + TemBean.getIdentity());
+        String gender = "Lady";
+        if (user.isSex()){
+            gender = "Sir";
+        }
+        PrGender.setText(gender);
+        PrMail.setText(user.getMail());
+        PrPhone.setText(user.getPhoneNumber());
+        PrName.setText(user.getName());
 
     }
 
@@ -471,12 +481,12 @@ public class HomeController implements Initializable {
         homePaneLabel.setStyle(style1);
     }
 
-
     @FXML
     public void JumpToWallet() throws IOException {
         root = App.loadFXML("WalletInterface");
         new PageTransTool().TransToAnotherPage(rootLayout, root);
     }
+
     @FXML
     public void JumpToHistory() throws IOException {
         root = App.loadFXML("HistoryInterface");
@@ -505,7 +515,5 @@ public class HomeController implements Initializable {
         homePane.setVisible(b3);
         coursePane.setVisible(b4);
     }
-
-
 
 }
