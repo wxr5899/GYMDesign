@@ -12,6 +12,7 @@ public class TemBean {
     private static Manager manager;
     private static Coach coach;
     private static Video video;
+    private static String identity;
 
     /*
         .txt URL List

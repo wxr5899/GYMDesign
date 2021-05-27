@@ -113,8 +113,6 @@ public class LoginController implements Initializable {
 
             recUserType(user);
 
-
-
             if (user == null){
                 warnLabel.setText("This user does not exist!");
             } else {
