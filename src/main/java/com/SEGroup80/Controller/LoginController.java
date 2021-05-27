@@ -163,6 +163,7 @@ public class LoginController implements Initializable {
         if (user.getUserID().charAt(0) == 'C') {
             coach = (Coach) user;
             TemBean.setCoach(coach);
+
         } else if (user.getUserID().charAt(0) == 'M') {
             manager = (Manager) user;
             TemBean.setManager(manager);

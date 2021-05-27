@@ -58,6 +58,14 @@ public class TemBean {
         return VideoTXTFileURL;
     }
 
+    public static String getIdentity() {
+        return identity;
+    }
+
+    public static void setIdentity(String identity) {
+        TemBean.identity = identity;
+    }
+
     @Override
     public String toString() {
         return "TemBean{" +
