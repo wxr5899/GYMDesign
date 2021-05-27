@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -198,18 +199,70 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="760.0" style="-fx-background-color: black;">
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
-                        <AnchorPane layoutX="150.0" prefHeight="200.0" prefWidth="610.0" />
+                        <ImageView fx:id="PrImage" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/CoachImage/Coach1.png" />
+                           </image>
+                           <effect>
+                              <InnerShadow radius="57.4425" width="210.77" />
+                           </effect>
+                        </ImageView>
+                        <AnchorPane layoutX="150.0" prefHeight="200.0" prefWidth="610.0">
+                           <children>
+                              <Label fx:id="PrIdentity" layoutX="24.0" layoutY="88.0" prefHeight="15.0" prefWidth="150.0" text="Identity" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="PrName" layoutX="24.0" layoutY="43.0" prefHeight="15.0" prefWidth="150.0" text="Name" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="PrGender" layoutX="24.0" layoutY="133.0" prefHeight="15.0" prefWidth="150.0" text="Gender" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="PrMail" layoutX="241.0" layoutY="88.0" prefHeight="15.0" prefWidth="150.0" text="Email" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="PrAge" layoutX="241.0" layoutY="43.0" prefHeight="15.0" prefWidth="150.0" text="Age" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="PrPhone" layoutX="241.0" layoutY="133.0" prefHeight="15.0" prefWidth="150.0" text="Phone" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="450.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/logo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutY="200.0" prefHeight="520.0" prefWidth="280.0" style="-fx-border-color: black;">
                      <children>
                         <AnchorPane prefHeight="100.0" prefWidth="280.0">
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="30.0" prefHeight="40.0" prefWidth="100.0" text="Friend List">
+                              <Label alignment="CENTER" layoutX="63.0" layoutY="31.0" prefHeight="40.0" prefWidth="156.0" text="Friend List">
                                  <font>
                                     <Font name="Times New Roman Bold" size="18.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/Icon/loginIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Label>
                               <Line endX="280.0" layoutY="100.0" strokeWidth="2.5" />
                            </children>
@@ -218,7 +271,7 @@
                   </AnchorPane>
                   <AnchorPane layoutX="284.0" layoutY="200.0" prefHeight="270.0" prefWidth="238.0" style="-fx-border-color: black;">
                      <children>
-                        <ImageView fitHeight="100.0" fitWidth="238.0" layoutX="69.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="100.0" fitWidth="238.0" layoutX="69.0" layoutY="50.0" onMouseClicked="#JumpToWallet" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Image/Icon/walletIcon.png" />
                            </image>
@@ -230,13 +283,35 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="522.0" layoutY="200.0" prefHeight="270.0" prefWidth="238.0" style="-fx-border-color: black;">
+                  <AnchorPane layoutX="522.0" layoutY="200.0" onMouseClicked="#JumpToHistory" prefHeight="270.0" prefWidth="238.0" style="-fx-border-color: black;">
                      <children>
-                        <ImageView fitHeight="155.0" fitWidth="238.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="69.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Icon/HistoryIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="69.0" layoutY="182.0" prefHeight="30.0" prefWidth="100.0" text="History">
+                           <font>
+                              <Font name="Times New Roman Bold" size="24.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                   <Line endX="100.0" startX="-100.0" />
-                  <AnchorPane layoutX="284.0" layoutY="470.0" prefHeight="247.0" prefWidth="476.0" />
+                  <AnchorPane layoutX="284.0" layoutY="470.0" prefHeight="247.0" prefWidth="476.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="188.0" layoutY="55.0" onMouseClicked="#JumpToBodyData" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Icon/dataIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="163.0" layoutY="193.0" prefHeight="30.0" prefWidth="150.0" text="Body Data">
+                           <font>
+                              <Font name="Times New Roman Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children></Pane>
          </children>
       </AnchorPane>

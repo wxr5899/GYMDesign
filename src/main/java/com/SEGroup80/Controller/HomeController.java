@@ -471,6 +471,24 @@ public class HomeController implements Initializable {
         homePaneLabel.setStyle(style1);
     }
 
+
+    @FXML
+    public void JumpToWallet() throws IOException {
+        root = App.loadFXML("WalletInterface");
+        new PageTransTool().TransToAnotherPage(rootLayout, root);
+    }
+    @FXML
+    public void JumpToHistory() throws IOException {
+        root = App.loadFXML("HistoryInterface");
+        new PageTransTool().TransToAnotherPage(rootLayout, root);
+    }
+
+    @FXML
+    public void JumpToBodyData() throws IOException {
+        root = App.loadFXML("BodyInterface");
+        new PageTransTool().TransToAnotherPage(rootLayout, root);
+    }
+
     @FXML
     public void closeHomeInterface(){
         Stage stage = (Stage)rootLayout.getScene().getWindow();
@@ -487,4 +505,7 @@ public class HomeController implements Initializable {
         homePane.setVisible(b3);
         coursePane.setVisible(b4);
     }
+
+
+
 }
