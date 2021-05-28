@@ -69,7 +69,7 @@ public class DataProducer {
 
 
         for (int i = 0; i < commentNum; i++) {
-            Comment comment  =  new Comment(commentID.get(i), commentContent.get(i), commentTime.get(i));
+            Comment comment = new Comment(commentID.get(i), commentContent.get(i), commentTime.get(i));
             commentList.add(comment);
             enrollService.commentEnroll(comment);
         }

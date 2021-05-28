@@ -25,17 +25,6 @@ public class UserJSONFileProcessor implements JSONFileProcessor {
      */
 
 
-
-
-
-    public void deleteUser(String userID) throws IOException {
-
-        recoUserType(userID);
-
-        new FileProcessor().removeLine(FileURL, userID);
-
-    }
-
     public void recoUserType(String ID){
 
         char identityType = ID.charAt(0);
@@ -51,6 +40,7 @@ public class UserJSONFileProcessor implements JSONFileProcessor {
         }
     }
 
+    @Override
     public void writeJSON(Object o, String ID) {
 
         recoUserType(ID);
@@ -137,6 +127,6 @@ public class UserJSONFileProcessor implements JSONFileProcessor {
     @Override
     public void deleteJSON(String ID) throws IOException {
         recoUserType(ID);
-        new FileProcessor().removeLine(FileURL, ID);
+        new FileProcessor().removeLine(FileURL, "\"userID\":"+ "\""+ ID+ "\"");
     }
 }

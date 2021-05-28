@@ -62,6 +62,14 @@ public class Trainer extends User {
         this.balance = balance;
     }
 
+    public MemberShip getMemberShip() {
+        return memberShip;
+    }
+
+    public void setMemberShip(MemberShip memberShip) {
+        this.memberShip = memberShip;
+    }
+
     @Override
     public String toString() {
         return "Trainer{" +

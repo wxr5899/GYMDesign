@@ -18,7 +18,7 @@ public class DeleteService {
         if (user == null) {
             System.out.println("The user is null!");
         } else {
-            new UserJSONFileProcessor().deleteUser(user.getUserID());
+            new UserJSONFileProcessor().deleteJSON(user.getUserID());
         }
 
     }

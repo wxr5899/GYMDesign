@@ -13,9 +13,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.LoginController">
+<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.LoginController">
    <children>
-      <TextField fx:id="userID" layoutX="308.0" layoutY="119.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" style="-fx-border-color: white; -fx-background-color: white;" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="119.0" />
+      <TextField fx:id="userID" layoutX="308.0" layoutY="119.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" style="-fx-border-color: white; -fx-background-color: white;" text="T18835705891" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="119.0" />
       <Button fx:id="loginButton" layoutX="428.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#handleLogin" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: black;" text="Login" textFill="WHITE" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="428.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="254.0">
          <font>
             <Font name="Times New Roman" size="16.0" />
@@ -24,7 +24,7 @@
          <font>
             <Font name="Times New Roman" size="12.0" />
          </font></Label>
-      <PasswordField fx:id="password" layoutX="308.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="201.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="174.0" />
+      <PasswordField fx:id="password" layoutX="308.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Password" style="-fx-background-color: white; -fx-background-radius: 1em;" text="123456" AnchorPane.bottomAnchor="201.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="174.0" />
       <Line endX="100.0" layoutX="407.0" layoutY="144.0" startX="-99.33328247070312" startY="-2.288818359375E-5" />
       <Button fx:id="enrollButton" layoutX="308.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#handleEroll" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: black;" text="Sign Up" textFill="WHITE" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="254.0">
          <font>

@@ -450,8 +450,7 @@ public class HomeController implements Initializable {
 
         if (identity.equals("Trainer")) {
             Trainer trainer = (Trainer) user;
-            if (trainer.getFriendList() != null){
-
+            if (!trainer.getFriendList().isEmpty()){
                 for (String friendID : trainer.getFriendList()){
                     String friendName = ((User) searchService.SearchUser(friendID, 1).get(0)).getName();
                     Label friendNameLabel = new Label(friendName);
