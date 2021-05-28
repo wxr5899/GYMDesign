@@ -5,15 +5,13 @@ import com.SEGroup80.Pojo.UserPojo.Trainer;
 import com.SEGroup80.Service.ModifyFileService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.text.Text;
-
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class WalletController implements Initializable {
-
 
     private Trainer trainer;
     private double balance;
