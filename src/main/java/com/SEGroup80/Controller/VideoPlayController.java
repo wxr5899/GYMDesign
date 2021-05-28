@@ -3,6 +3,8 @@ package com.SEGroup80.Controller;
 import com.SEGroup80.App;
 import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Video;
+import com.SEGroup80.Pojo.UserPojo.User;
+import com.SEGroup80.Tool.PageTransTool;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
@@ -25,6 +27,7 @@ import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.IdentityHashMap;
 import java.util.ResourceBundle;
 
 public class VideoPlayController implements Initializable {
@@ -42,6 +45,10 @@ public class VideoPlayController implements Initializable {
     private Scene scene;
 
     private Parent root = null;
+
+    private Video video;
+
+    private User user;
 
     /*
         control buttons;
@@ -68,6 +75,10 @@ public class VideoPlayController implements Initializable {
     @FXML
     private Label likeNumLabel, collectNumLabel;
 
+    @FXML
+    private ImageView LikeImage, CollectImage;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -81,11 +92,8 @@ public class VideoPlayController implements Initializable {
         volumeSD.setBlockIncrement(0.1);
         volumeSD.setValue(0.5);
 
-        Video video = TemBean.getVideo();
-
-//        System.out.println(video.toString());
-//        System.exit(0);
-
+        video = TemBean.getVideo();
+        user = TemBean.getTrainer();
 
         if (video != null) {
             videoURL = video.getVideoURL();
@@ -93,7 +101,6 @@ public class VideoPlayController implements Initializable {
             videoDescription = video.getDescription();
             likeNumLabel.setText(String.valueOf(video.getLikeList().size()));
             collectNumLabel.setText(String.valueOf(video.getCollectionList().size()));
-
         } else {
             System.out.println("There is a error during the data passing process");
             System.exit(0);
@@ -190,13 +197,35 @@ public class VideoPlayController implements Initializable {
     }
 
     @FXML
+    public void LikeVideo() {
+        if (video.getLikeList().isEmpty()){
+            video.getLikeList().add(user.getUserID());
+        } else {
+            for (String ID : video.getLikeList()) {
+                if (ID.equals(user.getUserID())){
+                    LikeImage.setOpacity(1);
+                }
+            }
+        }
+    }
+
+    @FXML
+    public void CollectVideo() {
+        if (video.getCollectionList().isEmpty()){
+            video.getCollectionList().add(user.getUserID());
+        } else {
+            for (String ID : video.getCollectionList()) {
+                if (ID.equals(user.getUserID())){
+                    CollectImage.setOpacity(1);
+                }
+            }
+        }
+    }
+
+    @FXML
     public void backHome() throws IOException {
         mediaPlayer.dispose();
         root = App.loadFXML("HomeInterface");
-        Stage stage = (Stage)videoRootLayout.getScene().getWindow();
-        stage.close();
-        scene = videoRootLayout.getScene();
-        scene.setRoot(root);
-        stage.show();
+        new PageTransTool().TransToAnotherPage(videoRootLayout, root);
     }
 }
