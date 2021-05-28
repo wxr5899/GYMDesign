@@ -3,7 +3,9 @@ package com.SEGroup80.Controller;
 import com.SEGroup80.App;
 import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Video;
+import com.SEGroup80.Pojo.UserPojo.Trainer;
 import com.SEGroup80.Pojo.UserPojo.User;
+import com.SEGroup80.Service.ModifyFileService;
 import com.SEGroup80.Tool.PageTransTool;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -48,7 +50,7 @@ public class VideoPlayController implements Initializable {
 
     private Video video;
 
-    private User user;
+    private Trainer trainer;
 
     /*
         control buttons;
@@ -91,7 +93,7 @@ public class VideoPlayController implements Initializable {
         volumeSD.setValue(0.5);
 
         video = TemBean.getVideo();
-        user = TemBean.getTrainer();
+        trainer = TemBean.getTrainer();
 
         if (video != null) {
             videoURL = video.getVideoURL();
@@ -104,7 +106,7 @@ public class VideoPlayController implements Initializable {
                 CollectImage.setOpacity(0.5);
             } else {
                 for (String ID : video.getCollectionList()) {
-                    if (ID.equals(user.getUserID())){
+                    if (ID.equals(trainer.getUserID())){
                         CollectImage.setOpacity(1);
                         break;
                     }
@@ -115,13 +117,12 @@ public class VideoPlayController implements Initializable {
                 LikeImage.setOpacity(0.5);
             } else {
                 for (String ID : video.getLikeList()) {
-                    if (ID.equals(user.getUserID())){
+                    if (ID.equals(trainer.getUserID())){
                         LikeImage.setOpacity(1);
                         break;
                     }
                 }
             }
-
         } else {
             System.out.println("There is a error during the data passing process");
             System.exit(0);
@@ -218,26 +219,37 @@ public class VideoPlayController implements Initializable {
     }
 
     @FXML
-    public void LikeVideo() {
+    public void LikeVideo() throws IOException {
         if (LikeImage.getOpacity() == 0.5){
             LikeImage.setOpacity(1);
-            video.getLikeList().add(user.getUserID());
+            video.getLikeList().add(trainer.getUserID());
+            trainer.getLikeList().add(video.getVideoID());
+            likeNumLabel.setText(String.valueOf(video.getLikeList().size() + 1));
         } else {
             LikeImage.setOpacity(0.5);
-            video.getLikeList().remove(user.getUserID());
+            video.getLikeList().remove(trainer.getUserID());
+            trainer.getLikeList().remove(video.getVideoID());
+            likeNumLabel.setText(String.valueOf(video.getLikeList().size() - 1));
         }
+        new ModifyFileService().modifyUserFile(trainer);
+        new ModifyFileService().modifyVideoFile(video);
     }
 
     @FXML
-    public void CollectVideo() {
+    public void CollectVideo() throws IOException {
         if (CollectImage.getOpacity() == 0.5){
             CollectImage.setOpacity(1);
-            video.getLikeList().add(user.getUserID());
-
+            video.getCollectionList().add(trainer.getUserID());
+            trainer.getCollectList().add(video.getVideoID());
+            collectNumLabel.setText(String.valueOf(video.getCollectionList().size() + 1));
         } else {
             CollectImage.setOpacity(0.5);
-            video.getLikeList().remove(user.getUserID());
+            video.getCollectionList().remove(trainer.getUserID());
+            trainer.getCollectList().remove(video.getVideoID());
+            collectNumLabel.setText(String.valueOf(video.getCollectionList().size() - 1));
         }
+        new ModifyFileService().modifyUserFile(trainer);
+        new ModifyFileService().modifyVideoFile(video);
     }
 
     @FXML

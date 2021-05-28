@@ -62,7 +62,7 @@
                                  <children>
                                     <AnchorPane prefHeight="60.0" prefWidth="100.0">
                                        <children>
-                                          <Label fx:id="likeNumLabel" layoutX="21.0" layoutY="15.0" text="999">
+                                          <Label fx:id="likeNumLabel" layoutX="21.0" layoutY="15.0" onMouseClicked="#LikeVideo" text="999">
                                              <graphic>
                                                 <ImageView fx:id="LikeImage" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#LikeVideo" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -75,7 +75,7 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="60.0" prefWidth="100.0">
                                        <children>
-                                          <Label fx:id="collectNumLabel" layoutX="18.0" layoutY="14.0" text="1020">
+                                          <Label fx:id="collectNumLabel" layoutX="18.0" layoutY="14.0" onMouseClicked="#CollectVideo" text="1020">
                                              <graphic>
                                                 <ImageView fx:id="CollectImage" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#CollectVideo" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                                                    <image>
