@@ -113,6 +113,9 @@ public class HomeController implements Initializable {
     @FXML
     private VBox friendVBox;
 
+    @FXML
+    private ImageView VIPIcon;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -436,7 +439,12 @@ public class HomeController implements Initializable {
             });
         }
 
-
+        if ("Trainer".equals(user.getIdentity())){
+            Trainer trainer = (Trainer) user;
+            if (trainer.getMemberShip().getMemberShip()){
+                VIPIcon.setOpacity(0.8);
+            }
+        }
         PrAge.setText("Age: " + user.getAge());
         PrIdentity.setText("Identity: " + TemBean.getIdentity());
         String gender = "Lady";

@@ -17,7 +17,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.HomeController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.HomeController">
    <children>
       <AnchorPane fx:id="rootLayout" prefHeight="200.0" prefWidth="320.0">
          <children>
@@ -214,10 +214,17 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="PrName" layoutX="24.0" layoutY="43.0" prefHeight="15.0" prefWidth="150.0" text="Name" textFill="WHITE">
+                              <Label fx:id="PrName" contentDisplay="RIGHT" layoutX="24.0" layoutY="43.0" prefHeight="15.0" prefWidth="150.0" text="Name" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fx:id="VIPIcon" fitHeight="150.0" fitWidth="15.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/Icon/VIPIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Label>
                               <Label fx:id="PrGender" layoutX="24.0" layoutY="133.0" prefHeight="15.0" prefWidth="150.0" text="Gender" textFill="WHITE">
                                  <font>
@@ -299,7 +306,7 @@
                      </children>
                   </AnchorPane>
                   <Line endX="100.0" startX="-100.0" />
-                  <AnchorPane layoutX="284.0" layoutY="470.0" prefHeight="247.0" prefWidth="476.0">
+                  <AnchorPane layoutX="284.0" layoutY="470.0" prefHeight="250.0" prefWidth="476.0" style="-fx-border-color: black;">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="188.0" layoutY="55.0" onMouseClicked="#JumpToBodyData" pickOnBounds="true" preserveRatio="true">
                            <image>

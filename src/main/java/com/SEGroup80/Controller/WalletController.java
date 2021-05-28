@@ -76,7 +76,7 @@ public class WalletController implements Initializable {
                     cost = 148;
                     dayNum =180;
                 } else if ("12 MONTHS 298$".equals(choice)){
-                    cost = 5000;
+                    cost = 298;
                     dayNum = 360;
                 } else {
                     cost = 0;
@@ -110,6 +110,7 @@ public class WalletController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setContentText("Your balance is not enough, please charge first!");
             alert.show();
+            return;
         }
 
 
@@ -129,6 +130,12 @@ public class WalletController implements Initializable {
             trainer.getMemberShip().setEndDate(endDateStr);
             balance -= cost;
             new ModifyFileService().modifyUserFile(trainer);
+            BalanceLabel.setText("Account Balance: " + "$ " + balance);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Open Success!");
+            alert.show();
+            return;
         }
 
 

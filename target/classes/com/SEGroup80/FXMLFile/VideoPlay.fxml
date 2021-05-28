@@ -64,7 +64,7 @@
                                        <children>
                                           <Label fx:id="likeNumLabel" layoutX="21.0" layoutY="15.0" text="999">
                                              <graphic>
-                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="LikeImage" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#LikeVideo" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../Image/Icon/likeIcon.png" />
                                                    </image>
@@ -77,7 +77,7 @@
                                        <children>
                                           <Label fx:id="collectNumLabel" layoutX="18.0" layoutY="14.0" text="1020">
                                              <graphic>
-                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="CollectImage" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#CollectVideo" opacity="0.5" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../Image/Icon/collectIcon.png" />
                                                    </image>

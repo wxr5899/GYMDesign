@@ -85,8 +85,6 @@ public class VideoPlayController implements Initializable {
 
         volumeAnchorPane.setVisible(false);
 
-        System.out.println(scene);
-
         volumeSD.setMin(0);
         volumeSD.setMax(1);
         volumeSD.setBlockIncrement(0.1);
@@ -101,6 +99,29 @@ public class VideoPlayController implements Initializable {
             videoDescription = video.getDescription();
             likeNumLabel.setText(String.valueOf(video.getLikeList().size()));
             collectNumLabel.setText(String.valueOf(video.getCollectionList().size()));
+
+            if (video.getCollectionList().isEmpty()){
+                CollectImage.setOpacity(0.5);
+            } else {
+                for (String ID : video.getCollectionList()) {
+                    if (ID.equals(user.getUserID())){
+                        CollectImage.setOpacity(1);
+                        break;
+                    }
+                }
+            }
+
+            if (video.getLikeList().isEmpty()){
+                LikeImage.setOpacity(0.5);
+            } else {
+                for (String ID : video.getLikeList()) {
+                    if (ID.equals(user.getUserID())){
+                        LikeImage.setOpacity(1);
+                        break;
+                    }
+                }
+            }
+
         } else {
             System.out.println("There is a error during the data passing process");
             System.exit(0);
@@ -198,27 +219,24 @@ public class VideoPlayController implements Initializable {
 
     @FXML
     public void LikeVideo() {
-        if (video.getLikeList().isEmpty()){
+        if (LikeImage.getOpacity() == 0.5){
+            LikeImage.setOpacity(1);
             video.getLikeList().add(user.getUserID());
         } else {
-            for (String ID : video.getLikeList()) {
-                if (ID.equals(user.getUserID())){
-                    LikeImage.setOpacity(1);
-                }
-            }
+            LikeImage.setOpacity(0.5);
+            video.getLikeList().remove(user.getUserID());
         }
     }
 
     @FXML
     public void CollectVideo() {
-        if (video.getCollectionList().isEmpty()){
-            video.getCollectionList().add(user.getUserID());
+        if (CollectImage.getOpacity() == 0.5){
+            CollectImage.setOpacity(1);
+            video.getLikeList().add(user.getUserID());
+
         } else {
-            for (String ID : video.getCollectionList()) {
-                if (ID.equals(user.getUserID())){
-                    CollectImage.setOpacity(1);
-                }
-            }
+            CollectImage.setOpacity(0.5);
+            video.getLikeList().remove(user.getUserID());
         }
     }
 

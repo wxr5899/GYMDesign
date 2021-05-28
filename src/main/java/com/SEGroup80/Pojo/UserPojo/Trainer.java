@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class Trainer extends User {
 
     private ArrayList<String> subscribeCoachList;
+    private ArrayList<String> likeList;
+    private ArrayList<String> collectList;
     private ArrayList<String> friendList;
     private ArrayList<Body> bodyRecord;
     private double balance;
@@ -21,13 +23,15 @@ public class Trainer extends User {
         this.balance = balance;
     }
 
-    public Trainer(String identity, String password, String name, String mail, String phoneNumber, int age, boolean sex, double balance, ArrayList<String> subscribeCoachList, ArrayList<String> friendList, ArrayList<Body> bodyRecord, MemberShip memberShip) {
+    public Trainer(String identity, String password, String name, String mail, String phoneNumber, int age, boolean sex, double balance, ArrayList<String> subscribeCoachList, ArrayList<String> friendList, ArrayList<Body> bodyRecord, MemberShip memberShip, ArrayList<String> likeList, ArrayList<String> collectList) {
         super(identity, password, name, mail, phoneNumber, age, sex);
         this.subscribeCoachList = subscribeCoachList;
         this.friendList = friendList;
         this.bodyRecord = bodyRecord;
         this.balance = balance;
         this.memberShip = memberShip;
+        this.likeList = likeList;
+        this.collectList = collectList;
     }
 
     public ArrayList<String> getSubscribeCoachList() {
@@ -68,6 +72,22 @@ public class Trainer extends User {
 
     public void setMemberShip(MemberShip memberShip) {
         this.memberShip = memberShip;
+    }
+
+    public ArrayList<String> getLikeList() {
+        return likeList;
+    }
+
+    public void setLikeList(ArrayList<String> likeList) {
+        this.likeList = likeList;
+    }
+
+    public ArrayList<String> getCollectList() {
+        return collectList;
+    }
+
+    public void setCollectList(ArrayList<String> collectList) {
+        this.collectList = collectList;
     }
 
     @Override
