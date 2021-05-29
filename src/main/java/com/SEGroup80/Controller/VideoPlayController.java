@@ -52,6 +52,10 @@ public class VideoPlayController implements Initializable {
 
     private Trainer trainer;
 
+    private int likeNum;
+
+    private int collectNum;
+
     /*
         control buttons;
      */
@@ -99,8 +103,11 @@ public class VideoPlayController implements Initializable {
             videoURL = video.getVideoURL();
             videoName = video.getTitle();
             videoDescription = video.getDescription();
-            likeNumLabel.setText(String.valueOf(video.getLikeList().size()));
-            collectNumLabel.setText(String.valueOf(video.getCollectionList().size()));
+
+            likeNum = video.getLikeList().size();
+            likeNumLabel.setText("" + likeNum);
+            collectNum = video.getCollectionList().size();
+            collectNumLabel.setText("" + collectNum);
 
             if (video.getCollectionList().isEmpty()){
                 CollectImage.setOpacity(0.5);
@@ -224,12 +231,14 @@ public class VideoPlayController implements Initializable {
             LikeImage.setOpacity(1);
             video.getLikeList().add(trainer.getUserID());
             trainer.getLikeList().add(video.getVideoID());
-            likeNumLabel.setText(String.valueOf(video.getLikeList().size() + 1));
+            likeNum += 1;
+            likeNumLabel.setText(String.valueOf(likeNum));
         } else {
             LikeImage.setOpacity(0.5);
             video.getLikeList().remove(trainer.getUserID());
             trainer.getLikeList().remove(video.getVideoID());
-            likeNumLabel.setText(String.valueOf(video.getLikeList().size() - 1));
+            likeNum -= 1;
+            likeNumLabel.setText(String.valueOf(likeNum));
         }
         new ModifyFileService().modifyUserFile(trainer);
         new ModifyFileService().modifyVideoFile(video);
@@ -241,12 +250,14 @@ public class VideoPlayController implements Initializable {
             CollectImage.setOpacity(1);
             video.getCollectionList().add(trainer.getUserID());
             trainer.getCollectList().add(video.getVideoID());
-            collectNumLabel.setText(String.valueOf(video.getCollectionList().size() + 1));
+            collectNum += 1;
+            collectNumLabel.setText(String.valueOf(collectNum));
         } else {
             CollectImage.setOpacity(0.5);
             video.getCollectionList().remove(trainer.getUserID());
             trainer.getCollectList().remove(video.getVideoID());
-            collectNumLabel.setText(String.valueOf(video.getCollectionList().size() - 1));
+            collectNum -= 1;
+            collectNumLabel.setText(String.valueOf(collectNum));
         }
         new ModifyFileService().modifyUserFile(trainer);
         new ModifyFileService().modifyVideoFile(video);
