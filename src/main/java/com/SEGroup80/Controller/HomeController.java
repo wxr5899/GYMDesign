@@ -3,6 +3,7 @@ package com.SEGroup80.Controller;
 import com.SEGroup80.App;
 import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Video;
+import com.SEGroup80.Pojo.CoursePojo.Course;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Pojo.UserPojo.Trainer;
 import com.SEGroup80.Pojo.UserPojo.User;
@@ -59,6 +60,7 @@ public class HomeController implements Initializable {
     private Parent root = null;
     private Scene scene;
     private User user;
+    private Trainer trainer;
 
     @FXML
     private AnchorPane rootLayout;
@@ -114,6 +116,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private ImageView VIPIcon;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -466,7 +470,7 @@ public class HomeController implements Initializable {
         PrName.setText(user.getName());
 
         if ("Trainer".equals(identity)) {
-            Trainer trainer = (Trainer) user;
+            trainer = (Trainer) user;
             if (!trainer.getFriendList().isEmpty()){
                 for (String friendID : trainer.getFriendList()){
                     String friendName = ((User) searchService.SearchUser(friendID, 1).get(0)).getName();
@@ -480,6 +484,73 @@ public class HomeController implements Initializable {
                     friendVBox.getChildren().add(friendNameLabel);
                 }
             }
+        }
+
+        try {
+            ArrayList<Course> courseArrayList = searchService.GetAllCourse();
+
+            for (Course course : courseArrayList){
+                String courseName = course.getCourseName();
+                ArrayList<String> authorID = course.getCoachList();
+                String authorNames = "";
+
+                for (String ID : authorID) {
+                    authorNames += ((User) searchService.SearchUser(ID, 1).get(0)).getName() + "   ";
+                }
+
+                AnchorPane anchorPane = new AnchorPane();
+                anchorPane.setPrefHeight(750);
+                anchorPane.setPrefHeight(200);
+
+
+                Image image = new Image("com/SEGroup80/Image/CourseImage/course2.png");
+
+                ImageView imageView = new ImageView(image);
+                imageView.setFitHeight(150);
+                imageView.setFitWidth(200);
+                imageView.setLayoutX(20);
+                imageView.setLayoutY(25);
+
+
+                Button imageButton = new Button();
+                imageButton.setPrefHeight(150);
+                imageButton.setPrefWidth(200);
+                imageButton.setLayoutX(20);
+                imageButton.setLayoutY(25);
+                imageButton.setStyle("-fx-background-color: transparent;");
+
+                imageButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        TemBean.setCourse(course);
+
+                        try {
+                            root = App.loadFXML("CourseInterface");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        new PageTransTool().TransToAnotherPage(rootLayout, root);
+                    }
+                });
+
+
+                Label nameLable = new Label(courseName);
+                nameLable.setPrefHeight(30);
+                nameLable.setPrefWidth(150);
+                nameLable.setLayoutX(250);
+                nameLable.setLayoutY(50);
+                Label authorLabel = new Label(authorNames);
+                authorLabel.setPrefHeight(30);
+                authorLabel.setPrefWidth(250);
+                authorLabel.setLayoutX(250);
+                authorLabel.setLayoutY(100);
+
+                anchorPane.getChildren().addAll(imageView, nameLable, authorLabel, imageButton);
+
+                courseVBox.getChildren().add(anchorPane);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }

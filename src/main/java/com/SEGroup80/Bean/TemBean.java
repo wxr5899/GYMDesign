@@ -1,5 +1,6 @@
 package com.SEGroup80.Bean;
 import com.SEGroup80.Pojo.BasicPojo.Video;
+import com.SEGroup80.Pojo.CoursePojo.Course;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Pojo.UserPojo.Manager;
 import com.SEGroup80.Pojo.UserPojo.Trainer;
@@ -13,6 +14,7 @@ public class TemBean {
     private static Coach coach;
     private static Video video;
     private static String identity;
+    private static Course course;
 
     /*
         .txt URL List
@@ -64,6 +66,14 @@ public class TemBean {
 
     public static void setIdentity(String identity) {
         TemBean.identity = identity;
+    }
+
+    public static Course getCourse() {
+        return course;
+    }
+
+    public static void setCourse(Course course) {
+        TemBean.course = course;
     }
 
     @Override

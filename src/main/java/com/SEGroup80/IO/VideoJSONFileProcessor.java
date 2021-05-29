@@ -13,9 +13,7 @@ public class VideoJSONFileProcessor implements JSONFileProcessor{
     public void writeJSON(Object o, String ID) {
 
         String jsonString = JSON.toJSONString(o);
-
         System.out.println(jsonString);
-
         new FileProcessor().writeToFile(VideoFileURL, jsonString);
     }
 

@@ -7,6 +7,7 @@ import com.SEGroup80.Pojo.UserPojo.Manager;
 import com.SEGroup80.Pojo.UserPojo.Trainer;
 import com.SEGroup80.Pojo.UserPojo.User;
 import com.SEGroup80.Service.SearchService;
+import com.SEGroup80.Tool.PageTransTool;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -142,15 +143,12 @@ public class LoginController implements Initializable {
         scene = rootLayout.getScene();
 
         try {
-            root = App.loadFXML("HomeInterface"); //progressBAR
+            root = App.loadFXML("RegisterInterface"); //progressBAR
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        Stage stage = (Stage)rootLayout.getScene().getWindow();
-        stage.close();
-        scene.setRoot(root);
-        stage.show();
+        new PageTransTool().TransToAnotherPage(rootLayout, root);
     }
 
     @FXML
