@@ -19,10 +19,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-
         new LoginController().LoadLoginInterface(stage);
-
-
     }
 
     public static void setRoot(String fxml) throws IOException {
@@ -36,11 +33,7 @@ public class App extends Application {
     }
 
 
-
     public static void main(String[] args) {
         launch();
     }
-
-
-
 }

@@ -35,7 +35,7 @@ public class UserJSONFileProcessor implements JSONFileProcessor {
             FileURL = ManagerFileURL;
         } else if ('C' == identityType) {
             FileURL = CoachFileURL;
-        } else if ('T' == identityType) {
+        } else {
             FileURL = TrainerFileURL;
         }
     }

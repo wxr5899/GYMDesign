@@ -76,11 +76,10 @@ public class HomeController implements Initializable {
         Nodes in Home Pane
      */
     @FXML
-    private ScrollBar homeScrollBar, coachScrollBar;
+    private ScrollBar homeScrollBar, coachScrollBar, courseScrollBar;
 
     @FXML
-    private VBox homeVBox;
-
+    private VBox homeVBox, courseVBox;
     @FXML
     private AnchorPane homeADPane;
 
@@ -141,6 +140,9 @@ public class HomeController implements Initializable {
             e.printStackTrace();
         }
 
+        /**
+         * video
+         */
         for (int i = 0; i < popVideoNum; i++) {
             Video video = (Video) objectArrayList.get(i);
             videoArrayList.add(video);
@@ -338,6 +340,9 @@ public class HomeController implements Initializable {
 
         ArrayList<Object> coachList = new SearchService().SearchUser("C", popCoachNum);
 
+        /**
+         * coach
+         */
         for (int i = 0; i < popCoachNum; i++) {
 
             Coach coach = (Coach) coachList.get(i);
@@ -439,6 +444,10 @@ public class HomeController implements Initializable {
             });
         }
 
+
+        /**
+         * personal page
+         */
         if ("Trainer".equals(user.getIdentity())){
             Trainer trainer = (Trainer) user;
             if (trainer.getMemberShip().getMemberShip()){
@@ -456,7 +465,7 @@ public class HomeController implements Initializable {
         PrPhone.setText("Call:" + user.getPhoneNumber());
         PrName.setText(user.getName());
 
-        if (identity.equals("Trainer")) {
+        if ("Trainer".equals(identity)) {
             Trainer trainer = (Trainer) user;
             if (!trainer.getFriendList().isEmpty()){
                 for (String friendID : trainer.getFriendList()){
@@ -472,8 +481,6 @@ public class HomeController implements Initializable {
                 }
             }
         }
-
-
 
     }
 

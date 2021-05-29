@@ -177,11 +177,9 @@ public class DataProducer {
 
 
         for (int i = 0; i < bodyNum; i++) {
-            Body body = new Body(weightList.get(i), heightList.get(i), bustList.get(i), waistList.get(i), hipList.get(i), BMIList.get(i));
-            body.setTimePoint(timeList.get(i));
+            Body body = new Body(weightList.get(i), heightList.get(i), bustList.get(i), waistList.get(i), hipList.get(i), BMIList.get(i), timeList.get(i));
             bodyArrayList.add(body);
         }
-
 
         /*
             Producing the user data:

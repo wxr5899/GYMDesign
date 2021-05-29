@@ -109,26 +109,28 @@ public class LoginController implements Initializable {
         if (Objects.equals(uID, "") || Objects.equals(uPwd, "")) {
             warnLabel.setText("Your name or password is empty!");
         } else {
+
+            SearchService searchService = new SearchService();
+            if (searchService.SearchUser(uID, 1).isEmpty()){
+                warnLabel.setText("This user does not exist!");
+                return;
+            }
+
             User user = (User) new SearchService().SearchUser(uID, 1).get(0);
 
             recUserType(user);
 
-            if (user == null){
-                warnLabel.setText("This user does not exist!");
+            if (uPwd.equals(user.getPassword())) {
+                System.out.println("login success!");
+
+                root = App.loadFXML("HomeInterface");
+                Stage stage = (Stage)rootLayout.getScene().getWindow();
+                stage.close();
+                scene = rootLayout.getScene();
+                scene.setRoot(root);
+                stage.show();
             } else {
-                if (uPwd.equals(user.getPassword())) {
-                    System.out.println("login success!");
-
-                    root = App.loadFXML("HomeInterface");
-                    Stage stage = (Stage)rootLayout.getScene().getWindow();
-                    stage.close();
-                    scene = rootLayout.getScene();
-                    scene.setRoot(root);
-                    stage.show();
-
-                } else {
-                    warnLabel.setText("Your Password is not correct!");
-                }
+                warnLabel.setText("Your Password is not correct!");
             }
         }
 

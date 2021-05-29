@@ -12,16 +12,14 @@ public class Body {
     private double BMI;
     private String timePoint;
 
-    public Body(double weight, double height, double bust, double waist, double hip, double BMI) {
+    public Body(double weight, double height, double bust, double waist, double hip, double BMI, String timePoint) {
         this.weight = weight;
         this.height = height;
         this.bust = bust;
         this.waist = waist;
         this.hip = hip;
         this.BMI = BMI;
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        this.timePoint = "" + sdf.format(new Date());
+        this.timePoint = timePoint;
     }
 
     public double getWeight() {

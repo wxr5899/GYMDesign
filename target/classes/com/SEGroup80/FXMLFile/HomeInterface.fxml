@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -106,14 +105,6 @@
       </AnchorPane>
       <AnchorPane prefHeight="720.0" prefWidth="760.0">
          <children>
-            <Pane fx:id="coursePane" prefHeight="720.0" prefWidth="760.0">
-               <children>
-                  <ScrollPane fx:id="courseScrollPane" hbarPolicy="NEVER" prefHeight="720.0" prefWidth="760.0" vbarPolicy="ALWAYS">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                    </content>
-                  </ScrollPane>
-               </children></Pane>
             <Pane fx:id="homePane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
                <children>
                   <VBox fx:id="homeVBox" prefHeight="720.0" prefWidth="750.0">
@@ -320,6 +311,11 @@
                         </Label>
                      </children>
                   </AnchorPane>
+               </children></Pane>
+            <Pane fx:id="coursePane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
+               <children>
+                  <VBox fx:id="courseVBox" prefHeight="720.0" prefWidth="750.0" />
+                  <ScrollBar fx:id="courseScrollBar" layoutX="750.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="0.0" />
                </children></Pane>
          </children>
       </AnchorPane>

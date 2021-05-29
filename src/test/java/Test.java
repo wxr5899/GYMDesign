@@ -6,10 +6,7 @@ public class Test {
 
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        ArrayList<Book> bookArrayList = new ArrayList<>();
-        bookArrayList.add(null);
-        System.out.println(bookArrayList.isEmpty());
-        System.out.println(bookArrayList.size());
+        System.out.println("123456".substring(4,6));
     }
 }
 
