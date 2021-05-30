@@ -117,7 +117,7 @@ public class HomeController implements Initializable {
     private VBox friendVBox;
 
     @FXML
-    private ImageView VIPIcon, walletImage;
+    private ImageView VIPIcon, walletImage, PrImage;
 
 
 
@@ -342,7 +342,7 @@ public class HomeController implements Initializable {
 
         }
 
-        coachScrollBar.setBlockIncrement(100);
+        coachScrollBar.setBlockIncrement(500);
 
         ArrayList<Object> coachList = new SearchService().SearchUser("C", popCoachNum);
 
@@ -366,14 +366,14 @@ public class HomeController implements Initializable {
             rightAnchorPane.setPrefWidth(380);
             rightAnchorPane.setPrefHeight(200);
 
-            String coachImageUrl = "com/SEGroup80/Image/CoachImage/Coach1.png";
+            String coachImageUrl = coach.getPhotoURL();
             Image coverImage =  new Image(coachImageUrl);
             ImageView coverImageView = new ImageView(coverImage);
             coverImageView.setFitWidth(100);
             coverImageView.setFitHeight(180);
             coverImageView.setLayoutX(40);
             coverImageView.setLayoutY(20);
-            coverImageView.setPreserveRatio(true);
+            coverImageView.setPreserveRatio(false);
             coverImageView.setEffect(new DropShadow());
             coverImageView.setEffect(new DropShadow());
             leftAnchorPane.getChildren().add(coverImageView);
@@ -445,7 +445,7 @@ public class HomeController implements Initializable {
             coachScrollBar.valueProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observableValue, Number oldValue, Number newValue) {
-                    coachVBox.setLayoutY(-newValue.doubleValue());
+                    coachVBox.setLayoutY(-2 * newValue.doubleValue());
                 }
             });
         }
@@ -455,6 +455,9 @@ public class HomeController implements Initializable {
          * personal page
          */
 
+
+        PrImage.setImage(new Image(user.getPhotoURL()));
+        PrImage.setPreserveRatio(false);
         if ("Coach".equals(identity)) {
             walletImage.setImage(new Image("com/SEGroup80/Image/Icon/uploadIcon.png"));
             walletLabel.setText("Upload");
@@ -462,8 +465,10 @@ public class HomeController implements Initializable {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
+
         if ("Trainer".equals(user.getIdentity())){
             Trainer trainer = (Trainer) user;
+
             if (trainer.getMemberShip() == null) {
                 trainer.setMemberShip(new MemberShip(false, simpleDateFormat.format(new Date())));
             }
@@ -488,7 +493,7 @@ public class HomeController implements Initializable {
 
         if ("Trainer".equals(identity)) {
             trainer = (Trainer) user;
-            if (trainer.getFriendList() != null){
+            if (trainer.getFriendList() != null && !trainer.getFriendList().isEmpty()){
                 for (String friendID : trainer.getFriendList()){
                     String friendName = ((User) searchService.SearchUser(friendID, 1).get(0)).getName();
                     Label friendNameLabel = new Label(friendName);

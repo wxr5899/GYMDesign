@@ -31,6 +31,7 @@ import javax.imageio.plugins.tiff.ExifGPSTagSet;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.ResourceBundle;
 
@@ -239,6 +240,9 @@ public class VideoPlayController implements Initializable {
             if (LikeImage.getOpacity() == 0.5){
                 LikeImage.setOpacity(1);
                 video.getLikeList().add(trainer.getUserID());
+                if (trainer.getLikeList() == null) {
+                    trainer.setLikeList(new ArrayList<String>());
+                }
                 trainer.getLikeList().add(video.getVideoID());
                 likeNum += 1;
                 likeNumLabel.setText(String.valueOf(likeNum));
@@ -260,6 +264,9 @@ public class VideoPlayController implements Initializable {
             if (CollectImage.getOpacity() == 0.5){
                 CollectImage.setOpacity(1);
                 video.getCollectionList().add(trainer.getUserID());
+                if (trainer.getCollectList() == null) {
+                    trainer.setCollectList(new ArrayList<String>());
+                }
                 trainer.getCollectList().add(video.getVideoID());
                 collectNum += 1;
                 collectNumLabel.setText(String.valueOf(collectNum));

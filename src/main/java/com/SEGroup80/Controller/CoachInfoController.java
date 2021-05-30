@@ -85,7 +85,7 @@ public class CoachInfoController implements Initializable {
         PhoneLabel.setText(coach.getPhoneNumber());
         Description.setText(coach.getDescription());
 
-        CoachPhoto.setImage(new Image("com/SEGroup80/Image/CoachImage/Coach1.png"));
+        CoachPhoto.setImage(new Image(coach.getPhotoURL()));
 
         course1Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
         course1Image.setPreserveRatio(false);
