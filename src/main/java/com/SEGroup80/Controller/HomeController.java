@@ -612,7 +612,7 @@ public class HomeController implements Initializable {
 
     @FXML
     public void JumpToHistory() throws IOException {
-        root = App.loadFXML("HistoryInterface");
+        root = App.loadFXML("BookHistory");
         new PageTransTool().TransToAnotherPage(rootLayout, root);
     }
 

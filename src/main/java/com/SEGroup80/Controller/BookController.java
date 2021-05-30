@@ -193,9 +193,6 @@ public class BookController implements Initializable {
 
                 book = bookService.showBookArrangement(bookArrayList, date);
 
-                //TODO:
-                System.out.println(bookArrayList);
-                System.out.println(book);
 
                 dateIndex = bookArrayList.indexOf(book);
 
@@ -273,6 +270,7 @@ public class BookController implements Initializable {
         coach.setBookList(bookArrayList);
         trainer.setBookList(bookArrayList);
         System.out.println(coach.toString());
+        System.out.println(trainer.toString());
         new ModifyFileService().modifyUserFile(coach);
         new ModifyFileService().modifyUserFile(trainer);
         TemBean.setCoach(coach);

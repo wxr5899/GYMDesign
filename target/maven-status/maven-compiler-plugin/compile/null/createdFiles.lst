@@ -12,6 +12,7 @@ com\SEGroup80\IO\UserJSONFileProcessor.class
 com\SEGroup80\Service\ModifyFileService.class
 com\SEGroup80\Controller\CoachInfoController$5.class
 com\SEGroup80\Controller\HomeController$4.class
+com\SEGroup80\Controller\BookHistoryController.class
 com\SEGroup80\IO\VideoJSONFileProcessor.class
 com\SEGroup80\Controller\LoginController.class
 com\SEGroup80\Service\PurchaseService.class
