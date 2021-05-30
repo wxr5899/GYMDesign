@@ -26,6 +26,8 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import javax.imageio.plugins.tiff.ExifGPSTagSet;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -112,21 +114,26 @@ public class VideoPlayController implements Initializable {
             if (video.getCollectionList().isEmpty()){
                 CollectImage.setOpacity(0.5);
             } else {
-                for (String ID : video.getCollectionList()) {
-                    if (ID.equals(trainer.getUserID())){
-                        CollectImage.setOpacity(1);
-                        break;
+                if (trainer != null){
+                    for (String ID : video.getCollectionList()) {
+                        if (ID.equals(trainer.getUserID())){
+                            CollectImage.setOpacity(1);
+                            break;
+                        }
                     }
                 }
+
             }
 
             if (video.getLikeList().isEmpty()){
                 LikeImage.setOpacity(0.5);
             } else {
-                for (String ID : video.getLikeList()) {
-                    if (ID.equals(trainer.getUserID())){
-                        LikeImage.setOpacity(1);
-                        break;
+                if (trainer != null){
+                    for (String ID : video.getLikeList()) {
+                        if (ID.equals(trainer.getUserID())){
+                            LikeImage.setOpacity(1);
+                            break;
+                        }
                     }
                 }
             }
@@ -227,40 +234,45 @@ public class VideoPlayController implements Initializable {
 
     @FXML
     public void LikeVideo() throws IOException {
-        if (LikeImage.getOpacity() == 0.5){
-            LikeImage.setOpacity(1);
-            video.getLikeList().add(trainer.getUserID());
-            trainer.getLikeList().add(video.getVideoID());
-            likeNum += 1;
-            likeNumLabel.setText(String.valueOf(likeNum));
-        } else {
-            LikeImage.setOpacity(0.5);
-            video.getLikeList().remove(trainer.getUserID());
-            trainer.getLikeList().remove(video.getVideoID());
-            likeNum -= 1;
-            likeNumLabel.setText(String.valueOf(likeNum));
+
+        if (trainer != null){
+            if (LikeImage.getOpacity() == 0.5){
+                LikeImage.setOpacity(1);
+                video.getLikeList().add(trainer.getUserID());
+                trainer.getLikeList().add(video.getVideoID());
+                likeNum += 1;
+                likeNumLabel.setText(String.valueOf(likeNum));
+            } else {
+                LikeImage.setOpacity(0.5);
+                video.getLikeList().remove(trainer.getUserID());
+                trainer.getLikeList().remove(video.getVideoID());
+                likeNum -= 1;
+                likeNumLabel.setText(String.valueOf(likeNum));
+            }
+            new ModifyFileService().modifyUserFile(trainer);
+            new ModifyFileService().modifyVideoFile(video);
         }
-        new ModifyFileService().modifyUserFile(trainer);
-        new ModifyFileService().modifyVideoFile(video);
     }
 
     @FXML
     public void CollectVideo() throws IOException {
-        if (CollectImage.getOpacity() == 0.5){
-            CollectImage.setOpacity(1);
-            video.getCollectionList().add(trainer.getUserID());
-            trainer.getCollectList().add(video.getVideoID());
-            collectNum += 1;
-            collectNumLabel.setText(String.valueOf(collectNum));
-        } else {
-            CollectImage.setOpacity(0.5);
-            video.getCollectionList().remove(trainer.getUserID());
-            trainer.getCollectList().remove(video.getVideoID());
-            collectNum -= 1;
-            collectNumLabel.setText(String.valueOf(collectNum));
+        if (trainer != null){
+            if (CollectImage.getOpacity() == 0.5){
+                CollectImage.setOpacity(1);
+                video.getCollectionList().add(trainer.getUserID());
+                trainer.getCollectList().add(video.getVideoID());
+                collectNum += 1;
+                collectNumLabel.setText(String.valueOf(collectNum));
+            } else {
+                CollectImage.setOpacity(0.5);
+                video.getCollectionList().remove(trainer.getUserID());
+                trainer.getCollectList().remove(video.getVideoID());
+                collectNum -= 1;
+                collectNumLabel.setText(String.valueOf(collectNum));
+            }
+            new ModifyFileService().modifyUserFile(trainer);
+            new ModifyFileService().modifyVideoFile(video);
         }
-        new ModifyFileService().modifyUserFile(trainer);
-        new ModifyFileService().modifyVideoFile(video);
     }
 
     @FXML

@@ -112,13 +112,13 @@ public class HomeController implements Initializable {
         Nodes in Account Pane
      */
     @FXML
-    private Label PrName, PrAge, PrIdentity, PrGender, PrMail, PrPhone;
+    private Label PrName, PrAge, PrIdentity, PrGender, PrMail, PrPhone, walletLabel;
 
     @FXML
     private VBox friendVBox;
 
     @FXML
-    private ImageView VIPIcon;
+    private ImageView VIPIcon, walletImage;
 
 
 
@@ -456,6 +456,11 @@ public class HomeController implements Initializable {
          * personal page
          */
 
+        if (trainer == null) {
+            walletImage.setImage(new Image("com/SEGroup80/Image/Icon/uploadIcon.png"));
+            walletLabel.setText("Upload");
+        }
+
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         if ("Trainer".equals(user.getIdentity())){
@@ -606,8 +611,13 @@ public class HomeController implements Initializable {
 
     @FXML
     public void JumpToWallet() throws IOException {
-        root = App.loadFXML("WalletInterface");
-        new PageTransTool().TransToAnotherPage(rootLayout, root);
+        if (trainer != null){
+            root = App.loadFXML("WalletInterface");
+            new PageTransTool().TransToAnotherPage(rootLayout, root);
+        } else {
+            root = App.loadFXML("CourseUpload");
+            new PageTransTool().TransToAnotherPage(rootLayout, root);
+        }
     }
 
     @FXML
@@ -618,8 +628,10 @@ public class HomeController implements Initializable {
 
     @FXML
     public void JumpToBodyData() throws IOException {
-        root = App.loadFXML("BodyInterface");
-        new PageTransTool().TransToAnotherPage(rootLayout, root);
+        if (trainer != null){
+            root = App.loadFXML("BodyInterface");
+            new PageTransTool().TransToAnotherPage(rootLayout, root);
+        }
     }
 
     @FXML

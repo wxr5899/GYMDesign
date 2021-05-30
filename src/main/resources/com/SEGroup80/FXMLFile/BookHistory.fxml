@@ -11,7 +11,7 @@
    <children>
       <AnchorPane prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: black;">
          <children>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="556.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="556.0" layoutY="26.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/Icon/backIcon.png" />
                </image>

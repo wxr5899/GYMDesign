@@ -302,7 +302,7 @@ public class DataProducer {
 
 
         for (int i = 0; i < coachNum; i++) {
-            User coach =  new Coach("Coach", "123456", coachNameList.get(i), coachPhoneList.get(i) + mailList.get(i), coachPhoneList.get(i), (25 + 389 % (i + 1)), genderList.get(i), null, courseList, "Welcome to Herclues！");
+            User coach =  new Coach("Coach", "123456", coachNameList.get(i), coachPhoneList.get(i) + mailList.get(i), coachPhoneList.get(i), (25 + 389 % (i + 1)), genderList.get(i), null, courseList, "Welcome to Herclues.");
             enrollService.userEnroll(coach);
         }
 
