@@ -14,7 +14,7 @@
          <children>
             <ImageView fx:id="coverImage" fitHeight="96.0" fitWidth="129.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Image/CourseImage/course2.png" />
+                  <Image url="@../Image/CourseImage/cover3.png" />
                </image>
             </ImageView>
             <Label fx:id="courseName" layoutX="158.0" layoutY="23.0" prefHeight="23.0" prefWidth="119.0" text="Course Name:" textFill="WHITE">

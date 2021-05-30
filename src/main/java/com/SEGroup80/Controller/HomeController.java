@@ -30,7 +30,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -173,7 +172,7 @@ public class HomeController implements Initializable {
             String videoAuthorName = coach.getName();
             System.out.println(videoAuthorName);
             String videoFileUrl = video.getVideoURL();
-            String videoCoverUrl = "com/SEGroup80/Image/CourseImage/cover1.jpg";
+            String videoCoverUrl = "com/SEGroup80/Image/CourseImage/cover2.png";
             int likeNum = video.getLikeList().size();
             int collectNum = video.getCollectionList().size();
 
@@ -521,13 +520,14 @@ public class HomeController implements Initializable {
                 anchorPane.setPrefHeight(200);
 
 
-                Image image = new Image("com/SEGroup80/Image/CourseImage/course2.png");
+                Image image = new Image(course.getPhotoURL());
 
-                ImageView imageView = new ImageView(image);
-                imageView.setFitHeight(150);
-                imageView.setFitWidth(200);
-                imageView.setLayoutX(20);
-                imageView.setLayoutY(25);
+                ImageView courseCover = new ImageView(image);
+                courseCover.setFitHeight(150);
+                courseCover.setFitWidth(200);
+                courseCover.setLayoutX(20);
+                courseCover.setLayoutY(25);
+                courseCover.setEffect(new DropShadow());
 
 
                 Button imageButton = new Button();
@@ -541,7 +541,6 @@ public class HomeController implements Initializable {
                     @Override
                     public void handle(MouseEvent mouseEvent) {
                         TemBean.setCourse(course);
-
                         try {
                             root = App.loadFXML("CourseInterface");
                         } catch (IOException e) {
@@ -563,7 +562,7 @@ public class HomeController implements Initializable {
                 authorLabel.setLayoutX(250);
                 authorLabel.setLayoutY(100);
 
-                anchorPane.getChildren().addAll(imageView, nameLable, authorLabel, imageButton);
+                anchorPane.getChildren().addAll(courseCover, nameLable, authorLabel, imageButton);
 
                 courseVBox.getChildren().add(anchorPane);
             }

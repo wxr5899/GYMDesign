@@ -87,11 +87,11 @@ public class CoachInfoController implements Initializable {
 
         CoachPhoto.setImage(new Image("com/SEGroup80/Image/CoachImage/Coach1.png"));
 
-        course1Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course1Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
         course1Image.setPreserveRatio(false);
-        course2Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course2Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
         course2Image.setPreserveRatio(false);
-        course3Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course3Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
         course3Image.setPreserveRatio(false);
 
 

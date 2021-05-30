@@ -68,15 +68,13 @@ public class UpLoadCourseController implements Initializable {
 
         String url = photoUrl.getText();
 
-
+        course.setPhotoURL(url);
 
         String[] videoID = video.getText().split("-");
 
         for (String ID : videoID) {
             videoList.add(ID);
         }
-
-
 
         course = new RecordCourse(producerList, Name, "Record", trainerList, videoList, description, priceNum);
 
