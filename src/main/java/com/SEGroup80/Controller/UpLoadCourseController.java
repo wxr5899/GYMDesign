@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 public class UpLoadCourseController implements Initializable {
 
     @FXML
-    TextField CourseName, Author, video, Introduction, price;
+    TextField CourseName, Author, video, Introduction, price, photoUrl;
 
     @FXML
     AnchorPane rootLayout;
@@ -33,6 +33,20 @@ public class UpLoadCourseController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+
+    }
+
+
+    public void backHome() throws IOException {
+        root = App.loadFXML("HomeInterface");
+        new PageTransTool().TransToAnotherPage(rootLayout, root);
+    }
+
+
+
+    public void upload(){
 
         ArrayList<String> producerList = new ArrayList<>();
         ArrayList<String> videoList = new ArrayList<>();
@@ -52,6 +66,8 @@ public class UpLoadCourseController implements Initializable {
 
         double priceNum = Double.parseDouble(price.getText());
 
+        String url = photoUrl.getText();
+
 
 
         String[] videoID = video.getText().split("-");
@@ -64,28 +80,8 @@ public class UpLoadCourseController implements Initializable {
 
         course = new RecordCourse(producerList, Name, "Record", trainerList, videoList, description, priceNum);
 
-
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setContentText("Upload success");
-        alert.show();
-
-    }
-
-
-    public void backHome() throws IOException {
-        root = App.loadFXML("HomeInterface");
-        new PageTransTool().TransToAnotherPage(rootLayout, root);
-    }
-
-
-
-    public void upload(){
-
         EnrollService enrollService = new EnrollService();
-
         enrollService.courseEnroll(course);
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Upload success");
         alert.show();

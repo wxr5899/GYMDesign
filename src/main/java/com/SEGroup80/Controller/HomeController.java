@@ -456,7 +456,7 @@ public class HomeController implements Initializable {
          * personal page
          */
 
-        if (trainer == null) {
+        if ("Coach".equals(identity)) {
             walletImage.setImage(new Image("com/SEGroup80/Image/Icon/uploadIcon.png"));
             walletLabel.setText("Upload");
         }

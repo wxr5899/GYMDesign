@@ -35,6 +35,7 @@
       <TextField fx:id="Author" layoutX="71.0" layoutY="218.0" prefHeight="23.0" prefWidth="200.0" promptText="CoAuthor" />
       <TextField fx:id="video" layoutX="71.0" layoutY="269.0" prefHeight="23.0" prefWidth="200.0" promptText="Video List" />
       <TextField fx:id="Introduction" layoutX="71.0" layoutY="317.0" prefHeight="23.0" prefWidth="200.0" promptText="Introduction" />
-      <TextField fx:id="price" layoutX="327.0" layoutY="165.0" prefHeight="23.0" prefWidth="200.0" promptText="price" />
+      <TextField fx:id="price" layoutX="326.0" layoutY="165.0" prefHeight="23.0" prefWidth="200.0" promptText="price" />
+      <TextField fx:id="photoUrl" layoutX="326.0" layoutY="218.0" prefHeight="23.0" prefWidth="200.0" promptText="photoUrl" />
    </children>
 </AnchorPane>

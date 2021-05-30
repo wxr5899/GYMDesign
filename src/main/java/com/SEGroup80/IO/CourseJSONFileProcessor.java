@@ -8,11 +8,21 @@ import com.alibaba.fastjson.JSON;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Title: CourseJSONFileProcessor
+ * This class is used to process JSON file for courses
+ * @author SEGroup80
+ */
+
 public class CourseJSONFileProcessor {
 
     final static private String LiveCourseFileURL = "src/main/resources/com/SEGroup80/CourseFile/LiveCourseFile.txt";
     final static private String RecCourseFileURL = "src/main/resources/com/SEGroup80/CourseFile/RecCourseFile.txt";
 
+    /**
+     * This method transform the course data into the JSON format then write it to the file
+     * @param course The course information
+     */
     public void writeCourseJSON(Course course) {
 
         String jsonString = JSON.toJSONString(course);
@@ -36,6 +46,11 @@ public class CourseJSONFileProcessor {
 
     }
 
+    /**
+     * This method read from JSON file to find and return the Course information with one particular course ID
+     * @param courseID The course's ID
+     * @return The object Course containing course information
+     */
     public Course readCourseJSON(String courseID) {
 
         ArrayList<Course> courseArrayList = new ArrayList<Course>();
@@ -105,7 +120,11 @@ public class CourseJSONFileProcessor {
 
     }
 
-
+    /**
+     * This method delete the course information with one particular course ID from the JSON file
+     * @param courseID A course's ID
+     * @throws IOException An exception occur when deleting a course information
+     */
     public void deleteCourse(String courseID) throws IOException {
 
         new FileProcessor().removeLine(RecCourseFileURL, courseID);
@@ -113,6 +132,11 @@ public class CourseJSONFileProcessor {
 
     // TODO: Finish
 
+    /**
+     * This method read from JSON file to find and return all the Courses' information
+     * @return An arraylist of course information
+     * @throws IOException An exception occur when reading all courses' information
+     */
     public ArrayList<Course> readAllCourseJSON() throws IOException {
 
         File file = new File(RecCourseFileURL);

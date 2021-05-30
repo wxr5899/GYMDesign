@@ -7,7 +7,11 @@ import java.io.*;
 import java.util.ArrayList;
 
 
-
+/**
+ * Title: CommentJSONFileProcessor.java
+ * This class is used to process JSON file video comments
+ * @author SEGroup80
+ */
 public class CommentJSONFileProcessor {
 
     final static private String CommentFileURL = "src/main/resources/com/SEGroup80/UserFile/CommentFile.txt";
@@ -17,6 +21,10 @@ public class CommentJSONFileProcessor {
         @description transform the course data into the JSON format then write it to the file
      */
 
+    /**
+     * This method transform the comment data into the JSON format then write it to the file
+     * @param comment A video comment
+     */
     public void writeCommentJSON(Comment comment) {
 
         String jsonString = JSON.toJSONString(comment);
@@ -28,6 +36,11 @@ public class CommentJSONFileProcessor {
 
     }
 
+    /**
+     * This method read from JSON file to find and return the comment with one particular comment ID
+     * @param commentID A video comment's ID
+     * @return A video comment
+     */
     public Comment readCommentJSON(String commentID) {
 
         ArrayList<Comment> commentArrayList = new ArrayList<>();
@@ -68,6 +81,11 @@ public class CommentJSONFileProcessor {
 
     }
 
+    /**
+     * This method delete the comment with one particular comment ID from the JSON file
+     * @param commentID  A video comment's ID
+     * @throws IOException An exception occur when deleting a comment
+     */
     public void deleteComment(String commentID) throws IOException {
 
         new FileProcessor().removeLine(CommentFileURL, commentID);

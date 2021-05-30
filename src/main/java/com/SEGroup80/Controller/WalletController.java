@@ -99,8 +99,7 @@ public class WalletController implements Initializable {
 
     @FXML
     public void backHome() throws IOException {
-        root = App.loadFXML("HomeInterface");
-        new PageTransTool().TransToAnotherPage(rootLayout, root);
+
     }
 
     @FXML

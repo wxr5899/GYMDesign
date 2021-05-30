@@ -3,6 +3,11 @@ package com.SEGroup80.IO;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Title: JSONFileProcessor
+ * This class is used to process JSON file
+ * @author SEGroup80
+ */
 public interface JSONFileProcessor {
 
     /**

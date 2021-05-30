@@ -12,7 +12,8 @@ public class Course {
     private String courseName;
     private String courseID;
     private String identity;
-    private ArrayList<String> trainerList;  //付钱报名的用户
+    private ArrayList<String> trainerList;
+    private String photoURL;
 
     public Course() {
     }
@@ -71,5 +72,22 @@ public class Course {
 
     public void setTrainerList(ArrayList<String> trainerList) {
         this.trainerList = trainerList;
+    }
+
+
+    /**
+     * This method gets the course cover's url
+     * @return The course cover's url
+     */
+    public String getPhotoURL() {
+        return photoURL;
+    }
+
+    /**
+     * This method sets course cover
+     * @param photoURL The course cover's url
+     */
+    public void setPhotoURL(String photoURL) {
+        this.photoURL = photoURL;
     }
 }
