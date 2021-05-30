@@ -42,6 +42,22 @@ public class Book {
         this.timeTable = timeTable;
     }
 
+    public String getTrainerID() {
+        return trainerID;
+    }
+
+    public void setTrainerID(String trainerID) {
+        this.trainerID = trainerID;
+    }
+
+    public String getCoachID() {
+        return coachID;
+    }
+
+    public void setCoachID(String coachID) {
+        this.coachID = coachID;
+    }
+
     @Override
     public String toString() {
         return "Book{" +

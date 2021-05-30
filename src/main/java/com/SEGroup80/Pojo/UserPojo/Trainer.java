@@ -1,6 +1,7 @@
 package com.SEGroup80.Pojo.UserPojo;
 
 import com.SEGroup80.Pojo.BasicPojo.Body;
+import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.BasicPojo.MemberShip;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class Trainer extends User {
     private ArrayList<String> collectList;
     private ArrayList<String> friendList;
     private ArrayList<Body> bodyRecord;
+    private ArrayList<Book> bookList;
     private double balance;
     private MemberShip memberShip;
 
@@ -88,6 +90,14 @@ public class Trainer extends User {
 
     public void setCollectList(ArrayList<String> collectList) {
         this.collectList = collectList;
+    }
+
+    public ArrayList<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(ArrayList<Book> bookList) {
+        this.bookList = bookList;
     }
 
     @Override

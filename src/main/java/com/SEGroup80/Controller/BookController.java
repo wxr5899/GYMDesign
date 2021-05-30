@@ -4,6 +4,7 @@ import com.SEGroup80.App;
 import com.SEGroup80.Bean.TemBean;
 import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.UserPojo.Coach;
+import com.SEGroup80.Pojo.UserPojo.Trainer;
 import com.SEGroup80.Service.BookService;
 import com.SEGroup80.Service.ModifyFileService;
 import com.SEGroup80.Tool.DateTool;
@@ -50,6 +51,8 @@ public class BookController implements Initializable {
 
     private DateTool dateTool = new DateTool();
 
+    private Trainer trainer;
+
     @FXML
     private AnchorPane rootLayout;
 
@@ -88,9 +91,13 @@ public class BookController implements Initializable {
                         if ((rectangle.getFill().equals(Color.BLACK)) && (!rectangle.getFill().equals(Color.WHITE))) {
                             rectangle.setFill(Color.WHITE);
                             book.getTimeTable().set(timePointIndex, 0);
+                            book.setTrainerID(null);
+                            book.setCoachID(coach.getUserID());
                         } else {
                             rectangle.setFill(Color.BLACK);
                             book.getTimeTable().set(timePointIndex, 1);
+                            book.setTrainerID(trainer.getUserID());
+                            book.setCoachID(coach.getUserID());
                         }
                         bookArrayList.set(dateIndex, book);
                         System.out.println(bookArrayList);
@@ -141,7 +148,8 @@ public class BookController implements Initializable {
         timePointList.add("21:00:00");
 
 
-        coach = (Coach) TemBean.getCoach();
+        coach = TemBean.getCoach();
+        trainer = TemBean.getTrainer();
 
         CoachName.setText(coach.getName());
         CoachAge.setText("" + coach.getAge());
@@ -263,9 +271,12 @@ public class BookController implements Initializable {
     @FXML
     public void checkOutBook() throws IOException {
         coach.setBookList(bookArrayList);
+        trainer.setBookList(bookArrayList);
         System.out.println(coach.toString());
         new ModifyFileService().modifyUserFile(coach);
+        new ModifyFileService().modifyUserFile(trainer);
         TemBean.setCoach(coach);
+        TemBean.setTrainer(trainer);
         BackToHome();
     }
 

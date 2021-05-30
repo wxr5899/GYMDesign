@@ -13,6 +13,7 @@ public class BookHistoryController implements Initializable {
 
         if (TemBean.getIdentity() == "Trainer"){
             Trainer trainer = TemBean.getTrainer();
+
         } else {
             Coach coach = TemBean.getCoach();
         }
