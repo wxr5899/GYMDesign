@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.BookHistoryController">
+   <children>
+      <AnchorPane prefHeight="81.0" prefWidth="600.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="556.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/Icon/backIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="21.0" prefHeight="40.0" prefWidth="138.0" text="Booking History" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView layoutY="81.0" prefHeight="320.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="cTrainer" prefWidth="200.0" text="Trainer" />
+          <TableColumn fx:id="cCoach" prefWidth="200.0" text="Coach" />
+            <TableColumn fx:id="cTime" minWidth="0.0" prefWidth="200.0" text="Time" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

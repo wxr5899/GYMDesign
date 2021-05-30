@@ -110,18 +110,23 @@ public class CoachInfoController implements Initializable {
             course1 = courseArrayList.get(0);
             course1Name.setText(course1.getCourseName());
         } else {
+            course1 = null;
             course1Name.setText("empty");
         }
 
         if (courseArrayList.size() > 1) {
-            course2Name.setText(courseArrayList.get(1).getCourseName());
+            course2 = courseArrayList.get(1);
+            course2Name.setText(course2.getCourseName());
         } else {
+            course2 = null;
             course1Name.setText("empty");
         }
 
         if (courseArrayList.size() > 2) {
-            course3Name.setText(courseArrayList.get(2).getCourseName());
+            course3 = courseArrayList.get(2);
+            course3Name.setText(course3.getCourseName());
         } else {
+            course3 = null;
             course3Name.setText("empty");
         }
 
@@ -143,6 +148,7 @@ public class CoachInfoController implements Initializable {
 
                     if (courseIndex * 3 + 1 >= courseIDArrayList.size()) {
                         course2Name.setText("empty");
+                        course2 = null;
                     } else {
                         course2 = courseArrayList.get(courseIndex * 3 + 1);
                         course2Name.setText(course2.getCourseName());
@@ -150,8 +156,10 @@ public class CoachInfoController implements Initializable {
 
                     if (courseIndex * 3 + 2 >= courseIDArrayList.size()) {
                         course3Name.setText("empty");
+                        course3 = null;
                     } else {
-                        course3Name.setText(courseArrayList.get(courseIndex * 3 + 2).getCourseName());
+                        course3 = courseArrayList.get(courseIndex * 3 + 2);
+                        course3Name.setText(course3.getCourseName());
                     }
                 }
             }
