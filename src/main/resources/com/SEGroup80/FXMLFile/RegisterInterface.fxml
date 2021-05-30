@@ -40,13 +40,13 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <TextField fx:id="age" layoutX="402.0" layoutY="112.0" AnchorPane.bottomAnchor="262.4" />
-      <TextField fx:id="phone" layoutX="402.0" layoutY="161.0" AnchorPane.bottomAnchor="213.4" />
+      <TextField fx:id="age" layoutX="424.0" layoutY="113.0" AnchorPane.bottomAnchor="263.66666666666663" />
+      <TextField fx:id="phone" layoutX="424.0" layoutY="162.0" AnchorPane.bottomAnchor="214.66666666666666" />
       <Label layoutX="315.0" layoutY="116.0" text="Age :" AnchorPane.bottomAnchor="264.0" AnchorPane.rightAnchor="241.0">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <TextField fx:id="mail" layoutX="402.0" layoutY="208.0" prefHeight="23.0" prefWidth="161.0" AnchorPane.bottomAnchor="169.0" AnchorPane.rightAnchor="37.0" />
+      <TextField fx:id="mail" layoutX="424.0" layoutY="206.0" prefHeight="23.0" prefWidth="161.0" AnchorPane.bottomAnchor="170.66666666666666" AnchorPane.rightAnchor="14.666666666666629" />
       <Line endX="100.00003051757812" endY="95.39996337890625" layoutX="197.0" layoutY="194.0" startX="100.00003051757812" startY="-114.19999694824219" />
       <PasswordField fx:id="pwd" layoutX="140.0" layoutY="161.0" prefHeight="26.0" prefWidth="150.0" />
       <ImageView fitHeight="63.0" fitWidth="70.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
@@ -72,5 +72,11 @@
       </Label>
       <ChoiceBox fx:id="identityChoice" layoutX="140.0" layoutY="253.0" prefWidth="150.0" />
       <TextField fx:id="name" layoutX="140.0" layoutY="113.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="photo" layoutX="423.0" layoutY="252.0" prefHeight="23.0" prefWidth="161.0" />
+      <Label layoutX="319.0" layoutY="255.0" text="PhotoURL:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

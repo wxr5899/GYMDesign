@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.CoachInfoController">
+<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.CoachInfoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="145.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#adb3b9" height="145.0" layoutX="136.0" opacity="0.45" stroke="BLACK" strokeType="INSIDE" width="465.0" />
@@ -72,7 +72,7 @@
                   <Pane prefHeight="100.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
                         <Label fx:id="course1Name" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="79.0" text="course name" />
-                        <ImageView fx:id="course1" fitHeight="79.0" fitWidth="103.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="course1Image" fitHeight="79.0" fitWidth="103.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/pic.PNG" />
                            </image>
@@ -81,13 +81,13 @@
                   </Pane>
                   <Pane prefHeight="112.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
-                        <ImageView fx:id="course2" fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="course2Image" fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
                         <Label fx:id="course2Name" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="79.0" text="course name" />
                      </children>
                   </Pane>
                   <Pane prefHeight="106.0" prefWidth="120.0" style="-fx-border-width: 1px; -fx-border-color: black; -fx-background-color: white;">
                      <children>
-                        <ImageView fx:id="course3" fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="course3Image" fitHeight="79.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
                         <Label fx:id="course3Name" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="79.0" text="course name" />
                      </children>
                   </Pane>

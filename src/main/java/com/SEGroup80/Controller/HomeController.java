@@ -2,6 +2,7 @@ package com.SEGroup80.Controller;
 
 import com.SEGroup80.App;
 import com.SEGroup80.Bean.TemBean;
+import com.SEGroup80.Pojo.BasicPojo.MemberShip;
 import com.SEGroup80.Pojo.BasicPojo.Video;
 import com.SEGroup80.Pojo.CoursePojo.Course;
 import com.SEGroup80.Pojo.UserPojo.Coach;
@@ -32,7 +33,9 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -452,11 +455,21 @@ public class HomeController implements Initializable {
         /**
          * personal page
          */
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
         if ("Trainer".equals(user.getIdentity())){
             Trainer trainer = (Trainer) user;
+            if (trainer.getMemberShip() == null) {
+                trainer.setMemberShip(new MemberShip(false, simpleDateFormat.format(new Date())));
+            }
             if (trainer.getMemberShip().getMemberShip()){
                 VIPIcon.setOpacity(0.8);
+            } else {
+                VIPIcon.setOpacity(0);
             }
+        } else {
+            VIPIcon.setOpacity(0);
         }
         PrAge.setText("Age: " + user.getAge());
         PrIdentity.setText("Identity: " + TemBean.getIdentity());
@@ -471,7 +484,7 @@ public class HomeController implements Initializable {
 
         if ("Trainer".equals(identity)) {
             trainer = (Trainer) user;
-            if (!trainer.getFriendList().isEmpty()){
+            if (trainer.getFriendList() != null){
                 for (String friendID : trainer.getFriendList()){
                     String friendName = ((User) searchService.SearchUser(friendID, 1).get(0)).getName();
                     Label friendNameLabel = new Label(friendName);

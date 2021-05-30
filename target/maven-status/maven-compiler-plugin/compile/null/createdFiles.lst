@@ -1,5 +1,6 @@
 com\SEGroup80\Controller\WalletController$1.class
 com\SEGroup80\Pojo\BasicPojo\MemberShip.class
+com\SEGroup80\Controller\EnrollController$1.class
 com\SEGroup80\Controller\CreateCourseController.class
 com\SEGroup80\Controller\HomeController$6.class
 com\SEGroup80\Controller\HomeController$3.class
@@ -9,6 +10,7 @@ com\SEGroup80\Controller\WalletController.class
 com\SEGroup80\Tool\PageTransTool.class
 com\SEGroup80\IO\UserJSONFileProcessor.class
 com\SEGroup80\Service\ModifyFileService.class
+com\SEGroup80\Controller\CoachInfoController$5.class
 com\SEGroup80\Controller\HomeController$4.class
 com\SEGroup80\IO\VideoJSONFileProcessor.class
 com\SEGroup80\Controller\LoginController.class

@@ -46,7 +46,7 @@ public class CoachInfoController implements Initializable {
     private ImageView leftSwitchRec, rightSwitchRec, leftSwitchLiv, rightSwitchLiv;
 
     @FXML
-    private ImageView course1, course2, course3;
+    private ImageView course1Image, course2Image, course3Image;
 
     private String gender;
 
@@ -61,6 +61,8 @@ public class CoachInfoController implements Initializable {
     private int bookIndex = 0;
 
     private ArrayList<Course> courseArrayList = new ArrayList<>();
+
+    private Course course1, course2, course3;
 
 
 
@@ -85,12 +87,12 @@ public class CoachInfoController implements Initializable {
 
         CoachPhoto.setImage(new Image("com/SEGroup80/Image/CoachImage/Coach1.png"));
 
-        course1.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
-        course1.setPreserveRatio(false);
-        course2.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
-        course2.setPreserveRatio(false);
-        course3.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
-        course3.setPreserveRatio(false);
+        course1Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course1Image.setPreserveRatio(false);
+        course2Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course2Image.setPreserveRatio(false);
+        course3Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover1.jpg"));
+        course3Image.setPreserveRatio(false);
 
 
         ArrayList<String> courseIDArrayList = coach.getCourseList();
@@ -105,7 +107,8 @@ public class CoachInfoController implements Initializable {
         }
 
         if (courseArrayList.size() > 0) {
-            course1Name.setText(courseArrayList.get(0).getCourseName());
+            course1 = courseArrayList.get(0);
+            course1Name.setText(course1.getCourseName());
         } else {
             course1Name.setText("empty");
         }
@@ -132,14 +135,17 @@ public class CoachInfoController implements Initializable {
 
                     if (courseIndex * 3 >= courseIDArrayList.size()) {
                         course1Name.setText("empty");
+                        course1 = null;
                     } else {
-                        course1Name.setText(courseArrayList.get(courseIndex * 3).getCourseName());
+                        course1 = courseArrayList.get(courseIndex * 3);
+                        course1Name.setText(course1.getCourseName());
                     }
 
                     if (courseIndex * 3 + 1 >= courseIDArrayList.size()) {
                         course2Name.setText("empty");
                     } else {
-                        course2Name.setText(courseArrayList.get(courseIndex * 3 + 1).getCourseName());
+                        course2 = courseArrayList.get(courseIndex * 3 + 1);
+                        course2Name.setText(course2.getCourseName());
                     }
 
                     if (courseIndex * 3 + 2 >= courseIDArrayList.size()) {
@@ -156,14 +162,65 @@ public class CoachInfoController implements Initializable {
             public void handle(MouseEvent mouseEvent) {
                 if (courseIndex > 0){
                     courseIndex -= 1;
-                    course1Name.setText(courseArrayList.get(courseIndex * 3).getCourseName());
-                    course2Name.setText(courseArrayList.get(courseIndex * 3 + 1).getCourseName());
-                    course3Name.setText(courseArrayList.get(courseIndex * 3 + 2).getCourseName());
+                    course1 = courseArrayList.get(courseIndex * 3);
+                    course1Name.setText(course1.getCourseName());
+
+                    course2 = courseArrayList.get(courseIndex * 3 + 1);
+                    course2Name.setText(course2.getCourseName());
+
+                    course3 = courseArrayList.get(courseIndex * 3 + 2);
+                    course3Name.setText(course3.getCourseName());
                 }
             }
         });
 
-        System.out.println(courseArrayList.size());
+        course1Image.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+                if (course1 != null){
+                    TemBean.setCourse(course1);
+                    try {
+                        root = App.loadFXML("CourseInterface");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    new PageTransTool().TransToAnotherPage(rootLayout, root);
+                }
+            }
+        });
+
+        course2Image.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+                if (course2 != null){
+                    TemBean.setCourse(course2);
+                    try {
+                        root = App.loadFXML("CourseInterface");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    new PageTransTool().TransToAnotherPage(rootLayout, root);
+                }
+            }
+        });
+
+        course3Image.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+                if (course3 != null){
+                    TemBean.setCourse(course3);
+                    try {
+                        root = App.loadFXML("CourseInterface");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    new PageTransTool().TransToAnotherPage(rootLayout, root);
+                }
+            }
+        });
 
 
         BackHome.setOnMouseClicked(new EventHandler<MouseEvent>() {

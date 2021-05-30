@@ -97,12 +97,6 @@ public class LoginController implements Initializable {
 
     @FXML
     public void handleLogin(MouseEvent mouseEvent) throws IOException {
-        /*
-        测试数据：
-        账号：M18335735899
-        密码：123456
-         */
-
 
         String uID = userID.getText();
         String uPwd = password.getText();
@@ -112,26 +106,28 @@ public class LoginController implements Initializable {
         } else {
 
             SearchService searchService = new SearchService();
-            if (searchService.SearchUser(uID, 1).isEmpty()){
+            if (searchService.SearchUser(uID, 1) == null){
                 warnLabel.setText("This user does not exist!");
                 return;
             }
 
-            User user = (User) new SearchService().SearchUser(uID, 1).get(0);
+            if (!new SearchService().SearchUser(uID, 1).isEmpty()){
+                User user = (User) new SearchService().SearchUser(uID, 1).get(0);
 
-            recUserType(user);
+                recUserType(user);
 
-            if (uPwd.equals(user.getPassword())) {
-                System.out.println("login success!");
+                if (uPwd.equals(user.getPassword())) {
+                    System.out.println("login success!");
 
-                root = App.loadFXML("HomeInterface");
-                Stage stage = (Stage)rootLayout.getScene().getWindow();
-                stage.close();
-                scene = rootLayout.getScene();
-                scene.setRoot(root);
-                stage.show();
+                    root = App.loadFXML("HomeInterface");
+
+                    new PageTransTool().TransToAnotherPage(rootLayout, root);
+                } else {
+                    warnLabel.setText("Your Password is not correct!");
+                }
             } else {
-                warnLabel.setText("Your Password is not correct!");
+                warnLabel.setText("This user does not exist!");
+                return;
             }
         }
 

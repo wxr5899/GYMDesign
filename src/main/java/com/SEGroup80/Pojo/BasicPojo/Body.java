@@ -6,9 +6,9 @@ import java.util.Date;
 public class Body {
     private double weight;
     private double height;
-    private double bust; //胸围
-    private double waist; //腰围
-    private double hip; //臀围
+    private double bust;
+    private double waist;
+    private double hip;
     private double BMI;
     private String timePoint;
 

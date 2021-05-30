@@ -11,8 +11,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-
-import javax.xml.stream.FactoryConfigurationError;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +18,7 @@ import java.util.ResourceBundle;
 public class EnrollController implements Initializable {
 
     @FXML
-    private TextField userID, name, age, phone, mail, pwd;
+    private TextField userID, name, age, phone, mail, pwd, photo;
 
     @FXML
     private Button enroll;
@@ -33,12 +31,11 @@ public class EnrollController implements Initializable {
 
     private boolean sex;
 
-
-
     @FXML
     public void enroll() {
         User user = null;
         user = new User((String) identityChoice.getValue(), pwd.getText(), name.getText(), mail.getText(), phone.getText(), Integer.parseInt(age.getText()), sex);
+        user.setPhotoURL(photo.getText());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Enroll Success!");
         alert.show();
@@ -53,10 +50,6 @@ public class EnrollController implements Initializable {
         new PageTransTool().TransToAnotherPage(rootLayout, root);
 
     }
-
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

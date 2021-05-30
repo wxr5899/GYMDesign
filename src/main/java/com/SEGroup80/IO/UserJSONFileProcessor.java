@@ -82,11 +82,15 @@ public class UserJSONFileProcessor implements JSONFileProcessor {
                         user = JSON.parseObject(line, Trainer.class);
                     }
 
-
+                    if (user == null){
+                        bufferedReader.close();
+                        inputStreamReader.close();
+                        fileInputStream.close();
+                        return null;
+                    }
                     if (user.getUserID().equals(ID)) {
 
                         userArrayList.add(user);
-
                         bufferedReader.close();
                         inputStreamReader.close();
                         fileInputStream.close();
