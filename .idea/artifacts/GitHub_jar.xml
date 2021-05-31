@@ -3,17 +3,17 @@
     <output-path>$PROJECT_DIR$/out/artifacts/GitHub_jar</output-path>
     <root id="archive" name="GitHub.jar">
       <element id="module-output" name="GitHub" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-controls/15.0.1/javafx-controls-15.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-fxml/15.0.1/javafx-fxml-15.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-base/15.0.1/javafx-base-15.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-graphics/15.0.1/javafx-graphics-15.0.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-graphics/15.0.1/javafx-graphics-15.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-controls/15.0.1/javafx-controls-15.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-fxml/15.0.1/javafx-fxml-15.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-media/15.0.1/javafx-media-15.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-controls/15.0.1/javafx-controls-15.0.1-win.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-media/15.0.1/javafx-media-15.0.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-base/15.0.1/javafx-base-15.0.1-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-fxml/15.0.1/javafx-fxml-15.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-base/15.0.1/javafx-base-15.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-controls/15.0.1/javafx-controls-15.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-graphics/15.0.1/javafx-graphics-15.0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-media/15.0.1/javafx-media-15.0.1-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../maven/apache-maven-3.6.3/localRepository/org/openjfx/javafx-fxml/15.0.1/javafx-fxml-15.0.1-win.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

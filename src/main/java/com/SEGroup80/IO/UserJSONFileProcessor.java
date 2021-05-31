@@ -1,6 +1,5 @@
 package com.SEGroup80.IO;
 
-import com.SEGroup80.Pojo.BasicPojo.Video;
 import com.SEGroup80.Pojo.UserPojo.Coach;
 import com.SEGroup80.Pojo.UserPojo.Manager;
 import com.SEGroup80.Pojo.UserPojo.Trainer;
@@ -12,9 +11,9 @@ import java.util.ArrayList;
 
 public class UserJSONFileProcessor implements JSONFileProcessor {
 
-    final static private String TrainerFileURL = "src/main/resources/com/SEGroup80/UserFile/TrainerFile.txt";
-    final static private String CoachFileURL = "src/main/resources/com/SEGroup80/UserFile/CoachFile.txt";
-    final static private String ManagerFileURL = "src/main/resources/com/SEGroup80/UserFile/ManagerFile.txt";
+    final static private String TrainerFileURL = "SEGroup80/UserFile/TrainerFile.txt";
+    final static private String CoachFileURL = "SEGroup80/UserFile/CoachFile.txt";
+    final static private String ManagerFileURL = "SEGroup80/UserFile/ManagerFile.txt";
 
     private String FileURL;
 
@@ -55,7 +54,11 @@ public class UserJSONFileProcessor implements JSONFileProcessor {
 
         recoUserType(ID);
 
-        File file = new File(FileURL);
+        File file = null;
+
+        file = new File(FileURL);
+
+        System.out.println(file.toPath());
 
         ArrayList<Object> userArrayList = new ArrayList<>();
 

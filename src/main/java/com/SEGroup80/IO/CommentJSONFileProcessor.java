@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class CommentJSONFileProcessor {
 
-    final static private String CommentFileURL = "src/main/resources/com/SEGroup80/UserFile/CommentFile.txt";
+    final static private String CommentFileURL = "SEGroup80/UserFile/CommentFile.txt";
 
     /*
         @param Comment

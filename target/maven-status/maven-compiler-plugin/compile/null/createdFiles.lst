@@ -32,6 +32,8 @@ com\SEGroup80\Service\SearchService.class
 com\SEGroup80\Controller\CoachInfoController$6.class
 com\SEGroup80\App.class
 com\SEGroup80\Controller\CoachInfoController.class
+com\SEGroup80\IO\CommentJSONFileProcessor.class
+com\SEGroup80\Controller\BodyUploadController.class
 com\SEGroup80\IO\JSONFileProcessor.class
 com\SEGroup80\Controller\EnrollController.class
 com\SEGroup80\Bean\TemBean.class
