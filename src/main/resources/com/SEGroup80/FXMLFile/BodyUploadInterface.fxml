@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.FXMLFile.BodyUploadInterface">
+   <children>
+      <AnchorPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="32.0" layoutY="29.0" prefHeight="42.0" prefWidth="145.0" text="Body Upload" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="100.0" layoutY="145.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField layoutX="100.0" layoutY="200.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField layoutX="100.0" layoutY="252.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="35.0" layoutY="145.0" prefHeight="25.0" prefWidth="45.0" text="Label" />
+   </children>
+</AnchorPane>

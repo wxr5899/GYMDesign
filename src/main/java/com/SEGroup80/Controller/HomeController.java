@@ -172,7 +172,7 @@ public class HomeController implements Initializable {
             String videoAuthorName = coach.getName();
             System.out.println(videoAuthorName);
             String videoFileUrl = video.getVideoURL();
-            String videoCoverUrl = "com/SEGroup80/Image/CourseImage/cover2.png";
+            String videoCoverUrl = video.getCoverUrl();
             int likeNum = video.getLikeList().size();
             int collectNum = video.getCollectionList().size();
 

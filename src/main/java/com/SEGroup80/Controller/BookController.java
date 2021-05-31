@@ -45,7 +45,9 @@ public class BookController implements Initializable {
 
     private int dateIndex;
 
-    private ArrayList<Book> bookArrayList;
+    private ArrayList<Book> coachBookArrayList;
+
+    private ArrayList<Book> trainerBookArrayList;
 
     private ArrayList<String> timePointList = new ArrayList<>();
 
@@ -99,8 +101,9 @@ public class BookController implements Initializable {
                             book.setTrainerID(trainer.getUserID());
                             book.setCoachID(coach.getUserID());
                         }
-                        bookArrayList.set(dateIndex, book);
-                        System.out.println(bookArrayList);
+
+                        coachBookArrayList.set(dateIndex, book);
+                        trainerBookArrayList.set(dateIndex, book);
                     }
                 }
             } else {
@@ -112,8 +115,8 @@ public class BookController implements Initializable {
                         rectangle.setFill(Color.BLACK);
                         book.getTimeTable().set(timePointIndex, 1);
                     }
-                    bookArrayList.set(dateIndex, book);
-                    System.out.println(bookArrayList);
+                    coachBookArrayList.set(dateIndex, book);
+                    trainerBookArrayList.set(dateIndex, book);
                 }
             }
         }
@@ -178,23 +181,34 @@ public class BookController implements Initializable {
                 BookService bookService = new BookService();
 
 
-                if (bookArrayList == null){
+                if (coachBookArrayList == null){
                     if (coach.getBookList() == null){
-                        bookArrayList = bookService.initBookArrangement(coach.getUserID(), visableDays);
+                        coachBookArrayList = bookService.initBookArrangement(coach, visableDays);
                     } else {
                         try {
-                            bookArrayList = bookService.extractFutureBookArrangement(coach, visableDays);
+                            coachBookArrayList = bookService.extractFutureBookArrangement(coach, visableDays);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
                     }
-
                 }
 
-                book = bookService.showBookArrangement(bookArrayList, date);
+                if (trainerBookArrayList == null){
+                    if (coach.getBookList() == null){
+                        trainerBookArrayList = bookService.initBookArrangement(trainer, visableDays);
+                    } else {
+                        try {
+                            trainerBookArrayList = bookService.extractFutureBookArrangement(trainer, visableDays);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                book = bookService.showBookArrangement(coachBookArrayList, date);
 
 
-                dateIndex = bookArrayList.indexOf(book);
+                dateIndex = coachBookArrayList.indexOf(book);
 
                 System.out.println("date Index:" + dateIndex);
 
@@ -267,8 +281,8 @@ public class BookController implements Initializable {
 
     @FXML
     public void checkOutBook() throws IOException {
-        coach.setBookList(bookArrayList);
-        trainer.setBookList(bookArrayList);
+        coach.setBookList(coachBookArrayList);
+        trainer.setBookList(trainerBookArrayList);
         System.out.println(coach.toString());
         System.out.println(trainer.toString());
         new ModifyFileService().modifyUserFile(coach);
@@ -277,6 +291,8 @@ public class BookController implements Initializable {
         TemBean.setTrainer(trainer);
         BackToHome();
     }
+
+
 
     @FXML
     public void BackToHome() throws IOException {

@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.BodyDataStatisticController">
    <children>
       <AnchorPane layoutX="40.0" layoutY="40.0" prefHeight="640.0" prefWidth="1000.0" style="-fx-background-color: black;">
@@ -29,7 +28,7 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="956.0" layoutY="35.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="939.0" layoutY="35.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Image/Icon/homeIcon.png" />
                      </image>

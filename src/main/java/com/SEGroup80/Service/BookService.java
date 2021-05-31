@@ -1,6 +1,8 @@
 package com.SEGroup80.Service;
 import com.SEGroup80.Pojo.BasicPojo.Book;
 import com.SEGroup80.Pojo.UserPojo.Coach;
+import com.SEGroup80.Pojo.UserPojo.Trainer;
+import com.SEGroup80.Pojo.UserPojo.User;
 import com.SEGroup80.Tool.DateTool;
 
 import java.text.ParseException;
@@ -22,20 +24,25 @@ public class BookService {
             for (int j = 0; j < 9; j++) {
                 timeTable.add(0);
             }
-            bookArrayList.add(new Book(null, coachID,""+sdf.format(day), timeTable));
-        }
+            if (user.getIdentity().equals("Coach")){
+                bookArrayList.add(new Book(null, user.getUserID(), ""+sdf.format(day), timeTable));
+            } else {
+                bookArrayList.add(new Book(user.getUserID(), null, ""+sdf.format(day), timeTable));
+            }
 
+        }
         return bookArrayList;
     }
 
     //TODO: There is a bug
-    public ArrayList<Book> extractFutureBookArrangement(Coach coach, int visableDays) throws ParseException {
+
+    public ArrayList<Book> extractFutureBookArrangement(User user, int visableDays) throws ParseException {
 
         DateTool dateTool = new DateTool();
 
         ArrayList<Book> extantBookList = null;
 
-        ArrayList<Book> futureBookList = initBookArrangement(coach.getUserID(), visableDays);
+        ArrayList<Book> futureBookList = initBookArrangement(user, visableDays);
 
         ArrayList<Book> mergedBookList = new ArrayList<>();
 
@@ -47,7 +54,13 @@ public class BookService {
 
         Book lastBook = null;
 
-        extantBookList = coach.getBookList();
+        if ("Coach".equals(user.getIdentity())) {
+            extantBookList = ((Coach) user).getBookList();
+        } else {
+            extantBookList = ((Trainer) user).getBookList();
+        }
+
+
         if (!extantBookList.isEmpty()){
             lastBook = extantBookList.get(extantBookList.size() - 1);
         }

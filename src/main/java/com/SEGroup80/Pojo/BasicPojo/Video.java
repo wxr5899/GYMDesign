@@ -118,6 +118,25 @@ public class Video {
         this.commentList = commentList;
     }
 
+    /**
+     * This method gets the photo url of this video
+     * @return The cover photo url of this video
+     */
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+    /**
+     * This method sets the photo url of this video
+     * @param coverUrl The cover photo url of this video
+     */
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
+    /**
+     * This method overrides the toString method to return video information
+     * @return A string containing video information
+     */
     @Override
     public String toString() {
         return "Video{" +
