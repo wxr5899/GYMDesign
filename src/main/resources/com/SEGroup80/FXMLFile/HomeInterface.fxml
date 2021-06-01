@@ -105,38 +105,6 @@
       </AnchorPane>
       <AnchorPane prefHeight="720.0" prefWidth="760.0">
          <children>
-            <Pane fx:id="homePane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
-               <children>
-                  <VBox fx:id="homeVBox" prefHeight="720.0" prefWidth="750.0">
-                     <children>
-                        <AnchorPane fx:id="homeADPane" prefHeight="300.0" prefWidth="760.0" style="-fx-background-color: black;">
-                           <children>
-                              <ImageView fx:id="homeADImage" fitHeight="270.0" fitWidth="750.0" layoutY="10.0" pickOnBounds="true">
-                                 <image>
-                                    <Image url="@../Image/cover1.jpg" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
-                        <Label fx:id="popularVideosLabel" prefHeight="30.0" prefWidth="137.0" text="Popular Videos">
-                           <VBox.margin>
-                              <Insets left="20.0" top="20.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font name="Times New Roman Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <HBox fx:id="popularVideosHBox" prefHeight="400.0" prefWidth="760.0">
-                           <children>
-                              <VBox fx:id="videoVBoxLeft" prefHeight="400.0" prefWidth="380.0" />
-                              <VBox fx:id="videoVBoxRight" prefHeight="400.0" prefWidth="380.0" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <ScrollBar fx:id="homeScrollBar" layoutX="750.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="10.0" />
-               </children>
-            </Pane>
             <Pane fx:id="coachPane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
                <children>
                   <VBox fx:id="coachVBox" prefHeight="720.0" prefWidth="750.0">
@@ -317,6 +285,38 @@
                      </children>
                   </AnchorPane>
                </children></Pane>
+            <Pane fx:id="homePane" prefHeight="720.0" prefWidth="760.0" style="-fx-background-color: white;">
+               <children>
+                  <VBox fx:id="homeVBox" prefHeight="720.0" prefWidth="750.0">
+                     <children>
+                        <AnchorPane fx:id="homeADPane" prefHeight="300.0" prefWidth="760.0" style="-fx-background-color: black;">
+                           <children>
+                              <ImageView fx:id="homeADImage" fitHeight="270.0" fitWidth="750.0" layoutY="10.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../Image/cover1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="popularVideosLabel" prefHeight="30.0" prefWidth="137.0" text="Popular Videos">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Times New Roman Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox fx:id="popularVideosHBox" prefHeight="400.0" prefWidth="760.0">
+                           <children>
+                              <VBox fx:id="videoVBoxLeft" prefHeight="400.0" prefWidth="380.0" />
+                              <VBox fx:id="videoVBoxRight" prefHeight="400.0" prefWidth="380.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ScrollBar fx:id="homeScrollBar" layoutX="750.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="10.0" />
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </children>

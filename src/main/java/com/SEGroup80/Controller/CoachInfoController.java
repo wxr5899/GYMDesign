@@ -34,16 +34,13 @@ public class CoachInfoController implements Initializable {
     private Label NameLabel, AgeLabel, SexLabel, EmailLabel, PhoneLabel;
 
     @FXML
-    private ImageView CoachPhoto;
-
-    @FXML
     private Text Description;
 
     @FXML
     private Label course1Name, course2Name, course3Name, book1, book2, book3;
 
     @FXML
-    private ImageView leftSwitchRec, rightSwitchRec, leftSwitchLiv, rightSwitchLiv;
+    private ImageView leftSwitchRec, rightSwitchRec, leftSwitchLiv, rightSwitchLiv, coachImage;
 
     @FXML
     private ImageView course1Image, course2Image, course3Image;
@@ -84,8 +81,7 @@ public class CoachInfoController implements Initializable {
         EmailLabel.setText(coach.getMail());
         PhoneLabel.setText(coach.getPhoneNumber());
         Description.setText(coach.getDescription());
-
-        CoachPhoto.setImage(new Image(coach.getPhotoURL()));
+        coachImage.setImage(new Image(coach.getPhotoURL()));
 
         course1Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
         course1Image.setPreserveRatio(false);

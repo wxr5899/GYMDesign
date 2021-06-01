@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootLayout" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.BookController">
+<AnchorPane fx:id="rootLayout" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SEGroup80.Controller.BookController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="57.0" layoutX="38.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
       <Label layoutX="50.0" layoutY="62.0" prefHeight="50.0" prefWidth="100.0" text="DATE:">
@@ -108,7 +108,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" />
       <AnchorPane layoutX="781.0" layoutY="39.0" prefHeight="641.0" prefWidth="254.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fitHeight="200.0" fitWidth="132.0" layoutX="62.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="coachImage" fitHeight="200.0" fitWidth="132.0" layoutX="62.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/CoachImage/Coach1.png" />
                </image>

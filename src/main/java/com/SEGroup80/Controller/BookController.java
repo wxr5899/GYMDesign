@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -71,7 +72,7 @@ public class BookController implements Initializable {
     private Label CoachName, CoachAge, CoachGender;
 
     @FXML
-    private ImageView BackHomeImageView, BookImageView;
+    private ImageView BackHomeImageView, BookImageView, coachImage;
 
     @FXML
     public void bookClick(MouseEvent mouseEvent) throws ParseException {
@@ -156,6 +157,7 @@ public class BookController implements Initializable {
 
         CoachName.setText(coach.getName());
         CoachAge.setText("" + coach.getAge());
+        coachImage.setImage(new Image(coach.getPhotoURL()));
 
 
         if (coach.isSex()) {
