@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class CourseJSONFileProcessor {
 
-    final static private String LiveCourseFileURL = "src/main/resources/com/SEGroup80/CourseFile/LiveCourseFile.txt";
-    final static private String RecCourseFileURL = "src/main/resources/com/SEGroup80/CourseFile/RecCourseFile.txt";
+    final static private String LiveCourseFileURL = "com/SEGroup80/CourseFile/LiveCourseFile.txt";
+    final static private String RecCourseFileURL = "com/SEGroup80/CourseFile/RecCourseFile.txt";
 
     /**
      * This method transform the course data into the JSON format then write it to the file

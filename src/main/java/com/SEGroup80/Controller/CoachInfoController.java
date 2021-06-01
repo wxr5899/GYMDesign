@@ -83,12 +83,9 @@ public class CoachInfoController implements Initializable {
         Description.setText(coach.getDescription());
         coachImage.setImage(new Image(coach.getPhotoURL()));
 
-        course1Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
-        course1Image.setPreserveRatio(false);
-        course2Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
-        course2Image.setPreserveRatio(false);
-        course3Image.setImage(new Image("com/SEGroup80/Image/CourseImage/cover2.png"));
-        course3Image.setPreserveRatio(false);
+
+
+
 
 
         ArrayList<String> courseIDArrayList = coach.getCourseList();
@@ -105,6 +102,8 @@ public class CoachInfoController implements Initializable {
         if (courseArrayList.size() > 0) {
             course1 = courseArrayList.get(0);
             course1Name.setText(course1.getCourseName());
+            course1Image.setImage(new Image(course1.getPhotoURL()));
+            course1Image.setPreserveRatio(false);
         } else {
             course1 = null;
             course1Name.setText("empty");
@@ -113,6 +112,8 @@ public class CoachInfoController implements Initializable {
         if (courseArrayList.size() > 1) {
             course2 = courseArrayList.get(1);
             course2Name.setText(course2.getCourseName());
+            course2Image.setImage(new Image(course2.getPhotoURL()));
+            course2Image.setPreserveRatio(false);
         } else {
             course2 = null;
             course1Name.setText("empty");
@@ -121,6 +122,8 @@ public class CoachInfoController implements Initializable {
         if (courseArrayList.size() > 2) {
             course3 = courseArrayList.get(2);
             course3Name.setText(course3.getCourseName());
+            course3Image.setImage(new Image(course3.getPhotoURL()));
+            course3Image.setPreserveRatio(false);
         } else {
             course3 = null;
             course3Name.setText("empty");
@@ -140,6 +143,7 @@ public class CoachInfoController implements Initializable {
                     } else {
                         course1 = courseArrayList.get(courseIndex * 3);
                         course1Name.setText(course1.getCourseName());
+                        course1Image.setImage(new Image(course1.getPhotoURL()));
                     }
 
                     if (courseIndex * 3 + 1 >= courseIDArrayList.size()) {
@@ -148,6 +152,7 @@ public class CoachInfoController implements Initializable {
                     } else {
                         course2 = courseArrayList.get(courseIndex * 3 + 1);
                         course2Name.setText(course2.getCourseName());
+                        course2Image.setImage(new Image(course2.getPhotoURL()));
                     }
 
                     if (courseIndex * 3 + 2 >= courseIDArrayList.size()) {
@@ -156,6 +161,7 @@ public class CoachInfoController implements Initializable {
                     } else {
                         course3 = courseArrayList.get(courseIndex * 3 + 2);
                         course3Name.setText(course3.getCourseName());
+                        course3Image.setImage(new Image(course3.getPhotoURL()));
                     }
                 }
             }
@@ -168,12 +174,15 @@ public class CoachInfoController implements Initializable {
                     courseIndex -= 1;
                     course1 = courseArrayList.get(courseIndex * 3);
                     course1Name.setText(course1.getCourseName());
+                    course1Image.setImage(new Image(course1.getPhotoURL()));
 
                     course2 = courseArrayList.get(courseIndex * 3 + 1);
                     course2Name.setText(course2.getCourseName());
+                    course2Image.setImage(new Image(course2.getPhotoURL()));
 
                     course3 = courseArrayList.get(courseIndex * 3 + 2);
                     course3Name.setText(course3.getCourseName());
+                    course3Image.setImage(new Image(course3.getPhotoURL()));
                 }
             }
         });

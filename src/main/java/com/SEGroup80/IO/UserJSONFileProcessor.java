@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class UserJSONFileProcessor implements JSONFileProcessor {
 
-    final static private String TrainerFileURL = "src/main/resources/com/SEGroup80/UserFile/TrainerFile.txt";
-    final static private String CoachFileURL = "src/main/resources/com/SEGroup80/UserFile/CoachFile.txt";
-    final static private String ManagerFileURL = "src/main/resources/com/SEGroup80/UserFile/ManagerFile.txt";
+    final static private String TrainerFileURL = "com/SEGroup80/UserFile/TrainerFile.txt";
+    final static private String CoachFileURL = "com/SEGroup80/UserFile/CoachFile.txt";
+    final static private String ManagerFileURL = "com/SEGroup80/UserFile/ManagerFile.txt";
 
     private String FileURL;
 
